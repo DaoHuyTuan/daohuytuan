@@ -4,6 +4,25 @@ date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 ---
 
+```js
+const data = val().call()
+//test
+const datas = () => {
+  return {
+    ...values,
+  }
+}
+```
+
+```css
+.main {
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+```
+
 This is my first post on my new fake blog! How exciting!
 
 I'm sure I'll write a lot more interesting things in the future.
