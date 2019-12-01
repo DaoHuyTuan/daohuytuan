@@ -17,7 +17,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <a href="https://app.daohuytuan.com">
-          hello this is App and i'm testing jenkins
+          hello this is daohuytuan and i'm testing jenkins
         </a>
         <article>
           <header>
