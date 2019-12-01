@@ -1,0 +1,33 @@
+#!/usr/bin/env groovy
+
+pipeline {
+
+    agent {
+        docker {
+            image 'node'
+            args '-u root'
+        }
+    }
+
+    stages {
+        stage('Pull') {
+            steps {
+                echo 'Pulling...'
+                sh 'git pull origin'
+                
+            }
+        }
+        stage('Install') {
+            steps {
+                echo 'Installing package...'
+                sh 'npm install'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'npm run build'
+            }
+        }
+    }
+}
