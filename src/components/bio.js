@@ -33,6 +33,7 @@ const Bio = () => {
   `)
 
   const { author, social } = data.site.siteMetadata
+  console.log(social);
   return (
     <div
       style={{
@@ -54,9 +55,7 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
+                fvdsakjvhckdsajhbvckj
       </p>
     </div>
   )
