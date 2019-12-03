@@ -1,5 +1,12 @@
 #!/usr/bin/env groovy
-
+node {
+    stage('SMC Checkout') {
+        git 'https://github.com/DaoHuyTuan/daohuytuan'
+    }
+    stage('Complie package'){
+        sh 'npm install'
+    }
+}
 pipeline {
 
     agent any
