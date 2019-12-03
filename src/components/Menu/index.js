@@ -4,7 +4,7 @@ const Menu = React.memo(props => {
     return (
         <ul>
             {menuList.map((item, index) => {
-                return <a keys={index} href={item.url}><li>{item.name}</li></a>
+                return <a key={index} href={item.url}><li>{item.name}</li></a>
             })}
         </ul>
     )
