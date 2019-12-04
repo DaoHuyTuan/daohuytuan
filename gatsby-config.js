@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `ppdusv`,
     author: `ppdusv`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Hy tứng's Blog`,
+    siteUrl: `https://daohuytuan.com`,
     social: {
       twitter: `kylemathews`,
     },
@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content/blog/`,
         name: `blog`,
       },
     },

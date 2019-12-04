@@ -2,11 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import Menu from "./Menu"
 import { rhythm, scale } from "../utils/typography"
-
+import GlobalStyle from "../theme/GlobalStyle"
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
-    console.log(title)
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -14,7 +13,7 @@ class Layout extends React.Component {
       header = (
         <h1
           style={{
-            ...scale(1.5),
+            ...scale(1),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
@@ -64,6 +63,8 @@ class Layout extends React.Component {
         <Menu />
         <header>{header}</header>
         <main>{children}</main>
+
+        <GlobalStyle />
       </div>
     )
   }
