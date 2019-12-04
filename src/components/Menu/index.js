@@ -1,12 +1,13 @@
 import React from "react";
-import { menuList } from "./menu"
-const Menu = React.memo(props => {
+import { Link } from "gatsby";
+import { MenuWrapper,MenuItem } from "./Menu.style";
+const Menu = React.memo(({...props}) => {
     return (
-        <ul>
-            {menuList.map((item, index) => {
-                return <a key={index} href={item.url}><li>{item.name}</li></a>
-            })}
-        </ul>
+        <MenuWrapper>
+            <MenuItem><Link to="/">Blog</Link></MenuItem>
+            <MenuItem><Link to="./about">About</Link></MenuItem>
+            <MenuItem><a href="https://app.daohuytuan.com" target="_blank">App</a></MenuItem>
+        </MenuWrapper>
     )
 })
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Menu from "./Menu"
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
@@ -58,9 +58,10 @@ class Layout extends React.Component {
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          padding: `${rhythm(0.5)} ${rhythm(3 / 4)}`,
         }}
       >
+        <Menu />
         <header>{header}</header>
         <main>{children}</main>
       </div>

@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Menu from "../components/Menu"
 import { rhythm } from "../utils/typography"
-
+import GlobalStyle from "../theme/GlobalStyle";
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -15,10 +15,9 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Menu />
         <SEO title="Hy tứng's Blog" />
         <Bio />
-
+        
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -45,6 +44,7 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
+        <GlobalStyle />
       </Layout>
     )
   }

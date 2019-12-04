@@ -38,7 +38,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(1),
       }}
     >
       <Image
@@ -55,7 +55,7 @@ const Bio = () => {
         }}
       />
       <p>
-                fvdsakjvhckdsajhbvckj
+         I'm Front End Developer, but i love BackEnd and DevOps
       </p>
     </div>
   )
