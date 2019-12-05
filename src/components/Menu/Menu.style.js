@@ -12,9 +12,14 @@ const MenuItem = styled.div`
   font-weight: bold;
   font-family: monospace;
   font-size: 16px;
+  ${props =>
+    props.ischecked &&
+    `
+  box-shadow: 0 2px 0 0 ${red};
+  `}
   &:last-child {
     margin-right: 0px;
   }
 `
-// box-shadow: 0 2px 0 0 ${red};
+
 export { MenuWrapper, MenuItem }

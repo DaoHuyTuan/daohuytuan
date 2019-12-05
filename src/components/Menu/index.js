@@ -2,20 +2,19 @@ import React from "react"
 import { Link } from "gatsby"
 import { MenuWrapper, MenuItem } from "./Menu.style"
 const Menu = React.memo(({ ...props }) => {
-  const listStyleActive = {
-    boxShadow: "0 2px 0 0 #f96969",
-  }
+  const { pathname } = props.location || ""
   return (
     <MenuWrapper>
-      <MenuItem>
-        <Link to="/" activeStyle={listStyleActive}>
-          Blog
-        </Link>
+      <MenuItem
+        ischecked={pathname.includes("blog") || pathname === "/" ? true : false}
+      >
+        <Link to="/">Blog</Link>
       </MenuItem>
-      <MenuItem>
-        <Link to="/about" activeStyle={listStyleActive}>
-          About
-        </Link>
+      <MenuItem ischecked={pathname === "/about" ? true : false}>
+        <Link to="/about">About</Link>
+      </MenuItem>
+      <MenuItem ischecked={pathname === "/life" ? true : false}>
+        <Link to="/life">Life</Link>
       </MenuItem>
       <MenuItem>
         <a href="./rss.xml" target="_blank">
