@@ -33,12 +33,11 @@ const Bio = () => {
   `)
 
   const { author, social } = data.site.siteMetadata
-  console.log(social);
   return (
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(1),
       }}
     >
       <Image
@@ -54,9 +53,7 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-                fvdsakjvhckdsajhbvckj
-      </p>
+      <p>I'm Front End Developer, but i love BackEnd and DevOps</p>
     </div>
   )
 }
