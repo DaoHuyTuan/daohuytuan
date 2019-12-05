@@ -60,7 +60,7 @@ class Layout extends React.Component {
           padding: `${rhythm(0.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <Menu />
+        <Menu location={location} />
         <header>{header}</header>
         <main>{children}</main>
 
