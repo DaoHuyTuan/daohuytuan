@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ListBlogs from "../components/ListBlogs"
-
+import Bio from "../components/bio"
+import SocialNetworth from "../components/SocialNetworth"
 import GlobalStyle from "../theme/GlobalStyle"
 class BlogIndex extends React.Component {
   render() {
@@ -16,6 +15,8 @@ class BlogIndex extends React.Component {
       <>
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="Hy tứng's Blog" />
+          <Bio />
+          <SocialNetworth />
           <ListBlogs posts={posts} />
           <GlobalStyle />
         </Layout>
