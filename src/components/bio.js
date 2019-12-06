@@ -22,9 +22,6 @@ const Bio = () => {
       site {
         siteMetadata {
           author
-          social {
-            twitter
-          }
         }
       }
     }
@@ -57,6 +54,7 @@ const Bio = () => {
         <a
           href="https://www.facebook.com/ppdusv"
           target="_blank"
+          rel="noopener noreferrer"
           style={{ boxShadow: " 0 2px 0 0 #f96969", color: "#f96969" }}
         >
           ppdusv
