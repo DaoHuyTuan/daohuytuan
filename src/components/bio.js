@@ -8,9 +8,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
 import { rhythm } from "../utils/typography"
-
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -37,7 +35,8 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(1),
+        alignItems: "center",
+        marginBottom: rhythm(0.5),
       }}
     >
       <Image
@@ -53,7 +52,17 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>I'm Front End Developer, but i love BackEnd and DevOps</p>
+      <p style={{ marginBottom: "0px", fontSize: "16px" }}>
+        Personal blog by{" "}
+        <a
+          href="https://www.facebook.com/ppdusv"
+          target="_blank"
+          style={{ boxShadow: " 0 2px 0 0 #f96969", color: "#f96969" }}
+        >
+          ppdusv
+        </a>
+        <br />A Vimmer and a fan of Emacs but use vscode.
+      </p>
     </div>
   )
 }

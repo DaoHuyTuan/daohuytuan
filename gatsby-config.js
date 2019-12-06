@@ -4,9 +4,6 @@ module.exports = {
     author: `ppdusv`,
     description: `Hy tứng's Blog`,
     siteUrl: `https://daohuytuan.com`,
-    social: {
-      twitter: `kylemathews`,
-    },
   },
   plugins: [
     {

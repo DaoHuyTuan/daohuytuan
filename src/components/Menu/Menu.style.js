@@ -5,6 +5,10 @@ const MenuWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 100px;
+  @media only screen and (max-width: 500px) {
+    flex-flow: column;
+    margin-bottom: 50px;
+  }
 `
 const MenuList = styled.div`
   display: flex;
@@ -31,10 +35,16 @@ const MenuTitle = styled.div`
   font-size: 35px;
   font-family: Montserrat, sans-serif;
   font-weight: 800;
-  ${props => props.isRootPath && `
+
+  ${props =>
+    props.isRootPath &&
+    `
     color: ${colorTheme};
    
   `}
+  @media only screen and (max-width: 500px) {
+    margin-bottom: 10px;
+  }
 `
 
-export { MenuWrapper, MenuItem,MenuList,MenuTitle }
+export { MenuWrapper, MenuItem, MenuList, MenuTitle }
