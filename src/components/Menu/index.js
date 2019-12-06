@@ -1,10 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-import { MenuWrapper, MenuItem } from "./Menu.style"
+import { MenuWrapper, MenuItem,MenuList, MenuTitle } from "./Menu.style"
 const Menu = React.memo(({ ...props }) => {
   const { pathname } = props.location || ""
   return (
-    <MenuWrapper>
+    <MenuWrapper >
+      <MenuTitle >
+      <Link to="/"><span>ppdusv</span></Link>  
+      </MenuTitle>
+      <MenuList>
       <MenuItem
         ischecked={pathname.includes("blog") || pathname === "/" ? true : false}
       >
@@ -30,6 +34,7 @@ const Menu = React.memo(({ ...props }) => {
           App
         </a>
       </MenuItem>
+      </MenuList>
     </MenuWrapper>
   )
 })

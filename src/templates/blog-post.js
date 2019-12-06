@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { BackButton, NextButton } from "./Template.style"
 import GlobalStyle from "../theme/GlobalStyle"
 class BlogPostTemplate extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class BlogPostTemplate extends React.Component {
               style={{
                 marginTop: rhythm(1),
                 marginBottom: 0,
+                color: "#f96969"
               }}
             >
               {post.frontmatter.title}
@@ -56,16 +58,20 @@ class BlogPostTemplate extends React.Component {
           >
             <li>
               {previous && (
+                <BackButton>
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
+                </BackButton>
               )}
             </li>
             <li>
               {next && (
+                <NextButton>
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>
+                </NextButton>
               )}
             </li>
           </ul>

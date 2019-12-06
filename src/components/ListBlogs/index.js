@@ -12,7 +12,7 @@ const ListBlogs = React.memo(({ posts }) => {
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
-                  color: "#9417e0",
+                  color: "#f96969",
                   fontFamily: "Montserrat,sans-serif",
                   letterSpacing: "2px",
                 }}
