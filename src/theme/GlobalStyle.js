@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         padding: 0px;
         margin: 0px;
+        color: #444343e6
     }
     img {
         border-style: none;
@@ -26,6 +27,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
     }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
