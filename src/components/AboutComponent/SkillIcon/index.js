@@ -1,5 +1,5 @@
 import React from "react"
-import { SkillIconStyle, SkillIconTitleStyle } from "./SkillIcon.style"
+import { SkillIconStyle } from "./SkillIcon.style"
 const SkillIcon = React.memo(props => {
   return (
     <>
