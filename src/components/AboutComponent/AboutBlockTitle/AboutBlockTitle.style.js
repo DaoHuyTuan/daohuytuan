@@ -5,4 +5,5 @@ export const AboutBlockTitleStyle = styled.div`
   font-family: ${fontMonst};
   font-weight: 800;
   margin-bottom: 28px;
+  color: ${colorTheme};
 `

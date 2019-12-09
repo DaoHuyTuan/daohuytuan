@@ -7,13 +7,11 @@ const SocialNetworth = React.memo(props => {
     <SocialNetWrapper>
       {listSocial.map(item => {
         return (
-          <>
-            <SocialNetItem>
-              <a href={item.url} key={item.id} target="_blank">
-                {item.name}
-              </a>
-            </SocialNetItem>
-          </>
+          <SocialNetItem key={item.id}>
+            <a href={item.url} target="_blank" rel="noopener noreferrer">
+              {item.name}
+            </a>
+          </SocialNetItem>
         )
       })}
     </SocialNetWrapper>

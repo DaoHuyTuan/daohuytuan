@@ -4,6 +4,10 @@ export const AboutBlockContentStyle = styled.div`
   & > ul {
     padding-left: 30px;
   }
+  ${props =>
+    props.mbottom &&
+    `
+  margin-bottom: ${props.mbottom}`};
 `
 export const StrongContentStyle = styled.strong`
   font-family: Montserrat, sans-serif;

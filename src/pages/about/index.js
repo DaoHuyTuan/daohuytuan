@@ -4,6 +4,7 @@ import AboutBlock from "../../components/AboutComponent/AboutBlock"
 import AboutBlockTitle from "../../components/AboutComponent/AboutBlockTitle"
 import AboutBlockSubTitle from "../../components/AboutComponent/AboutBlockSubTitle"
 import AboutBlockContent from "../../components/AboutComponent/AboutBlockContent"
+import WorkExpTitle from "../../components/AboutComponent/WorkExpTitle"
 import {
   StrongContentStyle,
   LinkContentStyle,
@@ -13,6 +14,7 @@ import { SkillIconWrapper } from "../../components/AboutComponent/SkillIcon/Skil
 import reactIcon from "../../../content/assets/icons/react-icon.svg"
 import nodeIcon from "../../../content/assets/icons/nodejs-icon.svg"
 import rorIcon from "../../../content/assets/icons/ror-icon.svg"
+
 const About = React.memo(props => {
   return (
     <Layout location={props.location} title="About Page">
@@ -80,8 +82,8 @@ const About = React.memo(props => {
       </AboutBlock>
       <AboutBlock>
         <AboutBlockTitle>WORK EXPERIENCE</AboutBlockTitle>
-        <AboutBlockContent>
-          <AboutBlockSubTitle>9CV9 Pte. Ltd</AboutBlockSubTitle>
+        <AboutBlockContent mbottom="60px">
+          <WorkExpTitle label="9CV9 Pte. Ltd" year="From 09/2017 to 01/2018" />
           <ul>
             <li>
               <StrongContentStyle>Introduce:</StrongContentStyle> Website 9CV9
@@ -108,7 +110,9 @@ const About = React.memo(props => {
               on rails, Elastic Search
             </li>
           </ul>
-          <AboutBlockSubTitle>Pyco group</AboutBlockSubTitle>
+        </AboutBlockContent>
+        <AboutBlockContent mbottom="60px">
+          <WorkExpTitle label="Pyco group" year="From 04/2018 to 15/04/2019" />
           <ul>
             <li>
               <StrongContentStyle>Introduce:</StrongContentStyle> Outsourcing
@@ -132,7 +136,12 @@ const About = React.memo(props => {
               Javascript, TweenMax (GreenSock - Javascript Libary for animation)
             </li>
           </ul>
-          <AboutBlockSubTitle>Dinovative (Present)</AboutBlockSubTitle>
+        </AboutBlockContent>
+        <AboutBlockContent>
+          <WorkExpTitle
+            label="Dinovative (Present)"
+            year="From 23/04/2019 to Now"
+          />
           <ul>
             <li>
               <StrongContentStyle>Introduce:</StrongContentStyle> Outsourcing
