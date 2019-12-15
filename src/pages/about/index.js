@@ -13,8 +13,15 @@ import SkillIcon from "../../components/AboutComponent/SkillIcon"
 import { SkillIconWrapper } from "../../components/AboutComponent/SkillIcon/SkillIcon.style"
 import reactIcon from "../../../content/assets/icons/react-icon.svg"
 import nodeIcon from "../../../content/assets/icons/nodejs-icon.svg"
-import rorIcon from "../../../content/assets/icons/ror-icon.svg"
-
+import nextjsIcon from "../../../content/assets/icons/nextjs.ico"
+import reduxIcon from "../../../content/assets/icons/redux-icon.svg"
+import pythonIcon from "../../../content/assets/icons/python-icon.svg"
+import jsIcon from "../../../content/assets/icons/js-icon.svg"
+import mysqlIcon from "../../../content/assets/icons/mysql-icon.svg"
+import postgresqlIcon from "../../../content/assets/icons/postgresql-icon.svg"
+import mongodbIcon from "../../../content/assets/icons/mongodb-icon.svg"
+import vimIcon from "../../../content/assets/icons/vim-icon.svg"
+import gitIcon from "../../../content/assets/icons/git-icon.svg"
 const About = React.memo(props => {
   return (
     <Layout location={props.location} title="About Page">
@@ -43,16 +50,43 @@ const About = React.memo(props => {
       </AboutBlock>
       <AboutBlock>
         <AboutBlockTitle>TECHNOLOGY</AboutBlockTitle>
+        <AboutBlockSubTitle>Programing Language</AboutBlockSubTitle>
+        <AboutBlockContent>
+          <SkillIconWrapper>
+            <SkillIcon contents={jsIcon} alt="JS" skillName="Javascript" />
+            <SkillIcon contents={pythonIcon} alt="Python" skillName="Python" />
+          </SkillIconWrapper>
+        </AboutBlockContent>
         <AboutBlockSubTitle>Framework/Libary</AboutBlockSubTitle>
         <AboutBlockContent>
           <SkillIconWrapper>
             <SkillIcon contents={reactIcon} alt="React" skillName="ReactJS" />
             <SkillIcon contents={nodeIcon} alt="NodeJS" skillName="NodeJS" />
+            <SkillIcon contents={nextjsIcon} alt="NextJS" skillName="NextJS" />
+            <SkillIcon contents={reduxIcon} alt="Redux" skillName="Redux" />
+          </SkillIconWrapper>
+        </AboutBlockContent>
+        <AboutBlockSubTitle>Database Management Systems:</AboutBlockSubTitle>
+        <AboutBlockContent>
+          <SkillIconWrapper>
+            <SkillIcon contents={mysqlIcon} alt="MySQL" skillName="MySQL" />
             <SkillIcon
-              contents={rorIcon}
-              alt="Ruby on Rails"
-              skillName="Ruby on Rails"
+              contents={postgresqlIcon}
+              alt="PostgreSQL"
+              skillName="PostgreSQL"
             />
+            <SkillIcon
+              contents={mongodbIcon}
+              alt="MongoDB"
+              skillName="MongoDB"
+            />
+          </SkillIconWrapper>
+        </AboutBlockContent>
+        <AboutBlockSubTitle>Other Skill:</AboutBlockSubTitle>
+        <AboutBlockContent>
+          <SkillIconWrapper>
+            <SkillIcon contents={vimIcon} alt="Vim" skillName="Vim" />
+            <SkillIcon contents={gitIcon} alt="Git" skillName="Git" />
           </SkillIconWrapper>
         </AboutBlockContent>
       </AboutBlock>
