@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nodeapp_daohuytuan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodeapp_daohuytuan
+    container_name: nodeapp_daohuytuan
+    ports:
+      - '7001:7001'
