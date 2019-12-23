@@ -5,4 +5,5 @@ COPY package.json ./
 RUN npm install -g gatsby-cli
 RUN npm install
 COPY . ./
+RUN ls
 RUN npm run build
