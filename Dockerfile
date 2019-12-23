@@ -5,6 +5,8 @@ COPY package.json ./
 RUN rm -rf ~/.node-gyp
 RUN rm -rf package-lock.json
 RUN rm -rf node_modules
+RUN npm install -g node-gyp
+RUN npm install -g npm
 RUN npm install
 RUN npm install gatsby-cli
 COPY . ./
