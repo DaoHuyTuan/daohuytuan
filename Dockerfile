@@ -2,8 +2,9 @@ FROM node:10-alpine
 LABEL maintainer="node_daohuytuan"
 WORKDIR /daohuytuan
 COPY package.json ./
-RUN apt-get install build-essential
-RUN npm install --verbose sharp
+RUN rm -rf ~/.node-gyp
+RUN rm -rf package-lock.json
+RUN rm -rf node_modules
 RUN npm install
 RUN npm install gatsby-cli
 COPY . ./
