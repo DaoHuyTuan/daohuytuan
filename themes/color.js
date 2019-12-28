@@ -1,7 +1,7 @@
 // light theme
 const theme = {
   light: {
-    bg: "#f1f1f1",
+    bg: "#ffffff",
     colorText: "#535353",
     colorTheme: "#f96969"
   },

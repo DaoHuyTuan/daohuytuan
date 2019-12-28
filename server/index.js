@@ -3,6 +3,7 @@ const compression = require("compression");
 const helmet = require("helmet");
 const next = require("next");
 const router = require("./routers");
+const path = require("path");
 // const formData = require("express-form-data");
 // var cookieParser = require("cookie-parser");
 const dev = process.env.NODE_ENV !== "production";
@@ -14,7 +15,8 @@ async function bootstrap() {
   const handle = app.getRequestHandler();
   await app.prepare();
   const server = express();
-  //   server.use(cookieParser());
+  const staticDir = path.resolve(__dirname, "..", ".next/static");
+  server.use("/_next/static", express.static(staticDir));
 
   server.use(
     compression({

@@ -4,11 +4,16 @@ import { sizeSm, sizeLg } from "./responsive";
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: "Montserrat"
   }
   html {
       font-size: 20px;
       box-sizing: border-box;
       overflow-y: scroll;
+  }
+  a {
+    text-decoration: none;
+    color: unset;
   }
   body {
     margin: 0px;

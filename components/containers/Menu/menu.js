@@ -1,26 +1,32 @@
 export const listMenu = [
   {
     id: 0,
-    name: "Blog"
+    name: "Blog",
+    url: "/"
   },
   {
     id: 1,
-    name: "CV"
+    name: "CV",
+    url: "/cv"
   },
   {
     id: 2,
-    name: "About"
+    name: "About",
+    url: "/about"
   },
   {
     id: 3,
-    name: "Life"
+    name: "Life",
+    url: "/life"
   },
   {
     id: 4,
-    name: "Rss"
+    name: "Rss",
+    url: "/dsfdsf"
   },
   {
     id: 5,
-    name: "App"
+    name: "App",
+    url: "/frevc"
   }
 ];

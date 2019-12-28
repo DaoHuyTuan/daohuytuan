@@ -1,3 +1,4 @@
+import React from "react";
 import App, { Container } from "next/app";
 import GlobalStyles from "../themes/Global.style";
 import Layout from "../components/containers/Layout";

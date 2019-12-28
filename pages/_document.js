@@ -1,9 +1,10 @@
+import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-
-// import favicon from "hotel/hotel/assets/images/favicon.png";
-
 export default class MyDocument extends Document {
+  constructor(props) {
+    super(props);
+  }
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -39,13 +40,12 @@ export default class MyDocument extends Document {
           />
           <meta name="description" content="Dao Huy Tuan's personal blog" />
           <meta name="keywords" content="Web Developer, Front End, ReactJS," />
-
-          {/* <link rel="icon" href={favicon} type="image/png" sizes="16x16" /> */}
-
           <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,800,900&display=swap&subset=vietnamese"
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i"
+            type="text/css"
           />
+          {/* <link rel="icon" href={favicon} type="image/png" sizes="16x16" /> */}
         </Head>
         <body>
           <Main />

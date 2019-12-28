@@ -1,14 +1,17 @@
 import React from "react";
 import Menu from "../Menu/index";
+import { HeaderWrapper, HeaderGroup } from "./Header.style";
 const Header = React.memo(props => {
   return (
-    <div className="header">
+    <HeaderWrapper>
       <div className="header-logo">
         <span>ppdusv</span>
-        <button onClick={props.onChangeTheme}>hello</button>
       </div>
-      <Menu />
-    </div>
+      <HeaderGroup>
+        <Menu />
+        <button onClick={props.onChangeTheme}>hello</button>
+      </HeaderGroup>
+    </HeaderWrapper>
   );
 });
 export default Header;
