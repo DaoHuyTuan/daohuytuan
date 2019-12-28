@@ -1,25 +1,13 @@
 import App, { Container } from "next/app";
-// import { LocaleProvider } from "antd";
-// import "antd/dist/antd.min.css";
-// import "react-image-gallery/styles/css/image-gallery.css";
-// import { IntlProvider } from "react-intl";
-// import { ThemeProvider } from "styled-components";
-// import themes from "../themes/themes";
-// import AppLocale from "../translations/index";
-// import GlobalStyles from "hotel/hotel/assets/style/Global.style";
+import GlobalStyles from "../themes/Global.style";
 import Layout from "../components/containers/Layout";
-// import AuthProvider from "../context/AuthProvider";
-// import { SearchProvider } from "../context/SearchProvider";
-// import { withData } from "../helpers/restriction";
-
-// const currentAppLocale = AppLocale["en"];
-
+import { ThemeProvider } from "styled-components";
+import theme from "../themes/color";
 class HotelCustomApp extends App {
   constructor(props) {
     super(props);
     this.state = {
-      currentSelectedTheme: "defaultTheme"
-      //   currentSelectedLanguage: currentAppLocale
+      theme: false
     };
   }
 
@@ -29,35 +17,33 @@ class HotelCustomApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
     const { query, pathname } = ctx;
-
-    // const { user, isLoggedIn } = withData(ctx);
     return { pageProps, query, pathname };
   }
-  handleOnChangeTheme = themeName => {
-    this.setState({
-      currentSelectedTheme: themeName
+  handleOnChangeTheme = () => {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        theme: !prevState.theme
+      };
     });
   };
 
-  //   handleOnChangeLanguage = language => {
-  //     const selectedLanguage = AppLocale[language.locale];
-  //     this.setState({
-  //       currentSelectedLanguage: selectedLanguage
-  //     });
-  //   };
   render() {
     const { Component, pageProps, query } = this.props;
-    const { currentSelectedTheme } = this.state;
-    console.log(pageProps);
+    let themeProvider = this.state.theme ? theme.dark : theme.light;
     return (
-      <Container>
-        <Layout>
-          <>
-            {/* <GlobalStyles /> */}
-            <Component {...pageProps} />
-          </>
-        </Layout>
-      </Container>
+      <ThemeProvider theme={themeProvider}>
+        <Container>
+          <div className="main">
+            <Layout onChangeTheme={this.handleOnChangeTheme}>
+              <>
+                <GlobalStyles />
+                <Component {...pageProps} />
+              </>
+            </Layout>
+          </div>
+        </Container>
+      </ThemeProvider>
     );
   }
 }

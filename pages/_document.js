@@ -32,9 +32,13 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="theme-color" content="#008489" />
-          <meta name="description" content="React next listing template." />
-          <meta name="keywords" content="React, React js, Next, Next js" />
+          <title>Hy tứng's Blog</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <meta name="description" content="Dao Huy Tuan's personal blog" />
+          <meta name="keywords" content="Web Developer, Front End, ReactJS," />
 
           {/* <link rel="icon" href={favicon} type="image/png" sizes="16x16" /> */}
 

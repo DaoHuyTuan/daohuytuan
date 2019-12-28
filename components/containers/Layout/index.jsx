@@ -3,7 +3,7 @@ import Header from "../Header";
 const Layout = React.memo(props => {
   return (
     <>
-      <Header />
+      <Header onChangeTheme={props.onChangeTheme} />
       {props.children}
     </>
   );
