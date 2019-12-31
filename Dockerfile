@@ -6,6 +6,7 @@ COPY package.json ./
 COPY . ./
 RUN npm install
 RUN npm install -g gatsby-cli
-RUN ls
+
 RUN npm run build
 COPY public
+RUN ls
