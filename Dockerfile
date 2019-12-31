@@ -8,5 +8,5 @@ RUN npm install
 RUN npm install -g gatsby-cli
 
 RUN npm run build
-COPY public
+COPY . ./
 RUN ls
