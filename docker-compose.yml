@@ -1,0 +1,10 @@
+version: '3'
+services:
+  node_daohuytuan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node_daohuytuan
+    container_name: node_daohuytuan
+    ports:
+      - '7000:7000'
