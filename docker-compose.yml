@@ -7,4 +7,4 @@ services:
     image: node_daohuytuan
     container_name: node_daohuytuan
     ports:
-      - '7001:7001'
+      - '7000:7000'
