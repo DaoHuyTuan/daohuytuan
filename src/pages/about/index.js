@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../../components/layout"
 import AboutBlock from "../../components/AboutComponent/AboutBlock"
 import AboutBlockTitle from "../../components/AboutComponent/AboutBlockTitle"
@@ -23,6 +23,15 @@ import mongodbIcon from "../../../content/assets/icons/mongodb-icon.svg"
 import vimIcon from "../../../content/assets/icons/vim-icon.svg"
 import gitIcon from "../../../content/assets/icons/git-icon.svg"
 const About = React.memo(props => {
+  const [data, setData] = useState([])
+  const fetching = () => {
+    fetch(`http://dummy.restapiexample.com/api/v1/employees`)
+      .then(response => response.json()) // parse JSON from request
+      .then(resultData => {
+        setData(resultData.stargazers_count)
+      })
+  }
+  console.log(data)
   return (
     <Layout location={props.location} title="About Page">
       <span
@@ -37,6 +46,7 @@ const About = React.memo(props => {
         About Me
       </span>
       <AboutBlock>
+        <button onClick={fetching}>hello</button>
         <AboutBlockTitle>PERSONAL INFOMATION</AboutBlockTitle>
         <AboutBlockContent>
           StoryHub is a blog template powered by React & Gatsby JS. It’s

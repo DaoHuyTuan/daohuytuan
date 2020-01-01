@@ -6,6 +6,7 @@ const ListBlogs = React.memo(({ posts }) => {
     <>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        console.log(node)
         return (
           <article key={node.fields.slug}>
             <header>
@@ -22,6 +23,9 @@ const ListBlogs = React.memo(({ posts }) => {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
+              {node.frontmatter.tags.map(item => {
+                return <span>{item}</span>
+              })}
             </header>
             <section>
               <p
