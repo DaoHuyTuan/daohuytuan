@@ -28,7 +28,7 @@ const About = React.memo(props => {
     fetch(`http://dummy.restapiexample.com/api/v1/employees`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
-        setData(resultData.stargazers_count)
+        setData(resultData)
       })
   }
   console.log(data)
