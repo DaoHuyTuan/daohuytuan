@@ -10,7 +10,6 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -23,7 +22,7 @@ class BlogPostTemplate extends React.Component {
               style={{
                 marginTop: rhythm(1),
                 marginBottom: 0,
-                color: "#f96969"
+                color: "#f96969",
               }}
             >
               {post.frontmatter.title}
@@ -37,6 +36,9 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.date}
             </p>
+            {post.frontmatter.tags.map((item, index) => {
+              return <p key={index}>{item}</p>
+            })}
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -59,18 +61,18 @@ class BlogPostTemplate extends React.Component {
             <li>
               {previous && (
                 <BackButton>
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
                 </BackButton>
               )}
             </li>
             <li>
               {next && (
                 <NextButton>
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
                 </NextButton>
               )}
             </li>
@@ -99,6 +101,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }
