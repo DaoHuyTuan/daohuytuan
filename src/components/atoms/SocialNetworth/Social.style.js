@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colorTheme } from "../../theme/variable"
+import { colorTheme } from "../../../theme/variable"
 
 export const SocialNetWrapper = styled.div`
   display: flex;

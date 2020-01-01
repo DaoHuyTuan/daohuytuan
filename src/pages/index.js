@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ListBlogs from "../components/ListBlogs"
 import Bio from "../components/bio"
-import SocialNetworth from "../components/SocialNetworth"
+import SocialNetworth from "../components/atoms/SocialNetworth"
 import GlobalStyle from "../theme/GlobalStyle"
 class BlogIndex extends React.Component {
   render() {
