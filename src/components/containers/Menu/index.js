@@ -13,7 +13,7 @@ const Menu = React.memo(({ ...props }) => {
       <MenuList>
         <MenuItem
           ischecked={
-            pathname.includes("blog") || pathname === "/" ? true : false
+            pathname ? pathname.includes("blog") || pathname === "/" ? true : false : ""
           }
         >
           <Link to="/">Blog</Link>

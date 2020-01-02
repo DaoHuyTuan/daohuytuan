@@ -1,26 +1,52 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
-
-const TagsPage = ({ data }) => {
-  console.log(data)
+import Layout from "../../components/layout"
+import { rhythm } from "../../utils/typography"
+import { TagLabel, TagStyle, TagWrapper } from "../../components/atoms/Tag/Tag.style";
+const TagsPage = ({ ...props }) => {
+  const { path, data, location, pageContext } = props
+  console.log(props)
+  const [arrayPosts, setArrayPosts] = useState(data.allMarkdownRemark.edges)
   return (
-    <div>
+    <Layout location={location} title="Tags">
+      <TagLabel>{pageContext.tagName}</TagLabel>
       <div>
-        <h1>Tags</h1>
-        <ul>
-          {/* {group.map(tag => {
+        {arrayPosts.map(post => {
+          console.log(post)
           return (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
+            <article key={post.node.fields.slug}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                    color: "#f96969",
+                    letterSpacing: "2px",
+                  }}
+                >
+                  <Link to={post.node.fields.slug}>
+                    {post.node.frontmatter.title}
+                  </Link>
+                </h3>
+                {/* <TagWrapper>
+              {node.frontmatter.tags.map((item, index) => {
+                return <Tag key={index}>{item}</Tag>
+              })}
+            </TagWrapper> */}
+                <small>{post.node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: post.node.frontmatter.description,
+                  }}
+                />
+              </section>
+            </article>
           )
-        })} */}
-        </ul>
+        })}
       </div>
-    </div>
+    </Layout>
   )
 }
 
@@ -49,7 +75,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
-      filter: {frontmatter: {tags:{eq: $tagName}}}
+      filter: { frontmatter: { tags: { eq: $tagName } } }
     ) {
       edges {
         node {

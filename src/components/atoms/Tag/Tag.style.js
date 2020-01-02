@@ -40,3 +40,9 @@ export const TagStyle = styled.p`
   color: ${props => handleTextColorTag(props.themeText)};
   background-color: ${props => handleThemeTag(props.theme)}};
 `
+export const TagLabel = styled.span`
+  font-family: ${fontMonst};
+  font-size: 2rem;
+  color: ${colorTheme};
+  font-weight: 700;
+`
