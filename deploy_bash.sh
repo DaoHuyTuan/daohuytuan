@@ -122,5 +122,5 @@ fi
 pullProject
 buildDockerImage
 pushImagesToLocalRegistry
-dockerDeploy
 deleteOldImage
+dockerDeploy
