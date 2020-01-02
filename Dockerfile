@@ -9,3 +9,4 @@ RUN npm run clean
 RUN npm run build
 COPY . ./
 EXPOSE 7000
+CMD ["npm", "run", "serve", "-p", "7000"]
