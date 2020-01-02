@@ -3,9 +3,9 @@ LABEL maintainer="node_daohuytuan"
 WORKDIR /daohuytuan
 RUN ls
 COPY . ./
-RUN npm install
-RUN rm -rf public
 RUN npm install -g gatsby-cli
+RUN npm run clean
+RUN npm install
 RUN npm run build
 COPY . ./
-RUN ls
+EXPOSE 7000
