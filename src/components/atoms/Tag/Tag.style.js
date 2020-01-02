@@ -2,11 +2,11 @@ import styled from "styled-components"
 import { colorTheme, fontMonst } from "../../../theme/variable"
 const handleThemeTag = props => {
   switch (props) {
-    case "#vim":
+    case "vim":
       return "#039833"
-    case "#FrontEnd":
+    case "FrontEnd":
       return "#644EF0"
-    case "#design":
+    case "design":
       return "#3E87BA"
     default:
       return colorTheme
@@ -14,11 +14,11 @@ const handleThemeTag = props => {
 }
 const handleTextColorTag = props => {
   switch (props) {
-    case "#vim":
+    case "vim":
       return "#ffffff"
-    case "#FrontEnd":
+    case "FrontEnd":
       return "#ffffff"
-    case "#design":
+    case "design":
       return "#ffffff"
     default:
       return "#ffffff"

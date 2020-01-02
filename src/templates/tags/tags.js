@@ -3,17 +3,16 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import { rhythm } from "../../utils/typography"
-import { TagLabel, TagStyle, TagWrapper } from "../../components/atoms/Tag/Tag.style";
+import { TagLabel, TagWrapper } from "../../components/atoms/Tag/Tag.style"
+import Tag from "../../components/atoms/Tag"
 const TagsPage = ({ ...props }) => {
-  const { path, data, location, pageContext } = props
-  console.log(props)
+  const { data, location, pageContext } = props
   const [arrayPosts, setArrayPosts] = useState(data.allMarkdownRemark.edges)
   return (
     <Layout location={location} title="Tags">
       <TagLabel>{pageContext.tagName}</TagLabel>
       <div>
         {arrayPosts.map(post => {
-          console.log(post)
           return (
             <article key={post.node.fields.slug}>
               <header>
@@ -28,11 +27,15 @@ const TagsPage = ({ ...props }) => {
                     {post.node.frontmatter.title}
                   </Link>
                 </h3>
-                {/* <TagWrapper>
-              {node.frontmatter.tags.map((item, index) => {
-                return <Tag key={index}>{item}</Tag>
-              })}
-            </TagWrapper> */}
+                <TagWrapper>
+                  {post.node.frontmatter.tags.map((item, index) => {
+                    return (
+                      <Tag key={index} tag={item}>
+                        {item}
+                      </Tag>
+                    )
+                  })}
+                </TagWrapper>
                 <small>{post.node.frontmatter.date}</small>
               </header>
               <section>

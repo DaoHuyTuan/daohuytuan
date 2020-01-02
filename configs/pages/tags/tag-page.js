@@ -1,6 +1,6 @@
 const _ = require("lodash")
 module.exports = {
-    createTagPages: async function(graphql, createPage, tagTemplate) {
+  createTagPages: async function(graphql, createPage, tagTemplate) {
     await graphql(
       `
         {
@@ -19,7 +19,7 @@ module.exports = {
       const tags = res.data.tagsGroup.group
       tags.forEach(tag => {
         return createPage({
-          path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+          path: `/tags/${tag.fieldValue}/`,
           component: tagTemplate,
           context: {
             tagName: tag.fieldValue,
