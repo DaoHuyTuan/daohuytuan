@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        postsRemark: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -22,17 +22,19 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+          
         }
       }
     `
   )
+  
 
   if (result.errors) {
     throw result.errors
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
+  const posts = result.data.postsRemark.edges
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -45,6 +47,19 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
         previous,
         next,
+      },
+    })
+  })
+  // Make tag pages
+   const tags = result.data.tagsGroup.group
+  // Make tag pages
+  tags.forEach(tag => {
+    console.log(tag)
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tagName: tag.fieldValue,
       },
     })
   })
