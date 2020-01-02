@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { BackButton, NextButton } from "./Template.style"
 import GlobalStyle from "../theme/GlobalStyle"
+import Tag from "../components/atoms/Tag"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -37,7 +38,7 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
             {post.frontmatter.tags.map((item, index) => {
-              return <p key={index}>{item}</p>
+              return <Tag key={index}>{item}</Tag>
             })}
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />

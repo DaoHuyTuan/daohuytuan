@@ -1,5 +1,5 @@
 import React from "react"
-import Menu from "./Menu"
+import Menu from "./containers/Menu"
 import { rhythm } from "../utils/typography"
 import GlobalStyle from "../theme/GlobalStyle"
 class Layout extends React.Component {

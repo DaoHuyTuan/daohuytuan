@@ -1,12 +1,13 @@
 import React from "react"
 import { rhythm } from "../../utils/typography"
 import { Link } from "gatsby"
+import Tag from "../atoms/Tag"
+import { TagWrapper } from "../atoms/Tag/Tag.style"
 const ListBlogs = React.memo(({ posts }) => {
   return (
     <>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
-        console.log(node)
         return (
           <article key={node.fields.slug}>
             <header>
@@ -14,18 +15,17 @@ const ListBlogs = React.memo(({ posts }) => {
                 style={{
                   marginBottom: rhythm(1 / 4),
                   color: "#f96969",
-                  fontFamily: "Montserrat,sans-serif",
                   letterSpacing: "2px",
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
+                <Link to={node.fields.slug}>{title}</Link>
               </h3>
+              <TagWrapper>
+                {node.frontmatter.tags.map((item, index) => {
+                  return <Tag key={index}>{item}</Tag>
+                })}
+              </TagWrapper>
               <small>{node.frontmatter.date}</small>
-              {node.frontmatter.tags.map(item => {
-                return <span>{item}</span>
-              })}
             </header>
             <section>
               <p

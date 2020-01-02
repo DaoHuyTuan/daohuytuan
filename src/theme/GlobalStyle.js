@@ -27,6 +27,9 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
     }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Montserrat,sans-serif
+    }
 `
 
 export default GlobalStyle
