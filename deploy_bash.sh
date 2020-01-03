@@ -44,10 +44,11 @@ changeDirStaticServer() {
 }
 cloneStaticServer() {
 	cd ..
-	ls
+	sudo rm -rf $path_static_server
+	mkdir -p $path_static_server
 	echo "CLONE static server"
 	ls
-	mkdir -p $path_static_server
+	
 	
 	if [ ! $? -eq 0 ]; then
     	exit 1
