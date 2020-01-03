@@ -4,14 +4,12 @@ WORKDIR /daohuytuan
 RUN ls
 COPY . ./
 RUN npm install
+RUN npm install -g serve
 RUN npm install -g gatsby-cli
 RUN npm run clean
 RUN npm run build
 COPY . ./
 RUN ls
-RUN cp -r ./public ./static-server/public
-RUN cd static-server
-RUN npm run serve public
-RUN cd ..
+RUN serve -s build -l 7000 
 EXPOSE 7000
 
