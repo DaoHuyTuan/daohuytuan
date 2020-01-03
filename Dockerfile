@@ -10,6 +10,7 @@ RUN npm run clean
 RUN npm run build
 COPY . ./
 RUN ls
-RUN serve -s build -l 7000 
 EXPOSE 7000
+RUN ["serve", "-s", "build", "-l", "7000"]
+
 
