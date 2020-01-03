@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM daohuytuan/nodejs10-image:latest
 LABEL maintainer="node_daohuytuan"
 WORKDIR /daohuytuan
 COPY . ./
