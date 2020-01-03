@@ -4,7 +4,7 @@ path_app="$HOME/daohuytuan"
 gitProjectName="daohuytuan"
 gitProjectUrl="git@github.com:DaoHuyTuan/daohuytuan.git"
 
-path_static_server="$HOME/static-server"
+path_static_server="$HOME/daohuytuan"
 gitStaticServerName="static-server"
 gitStaticServerUrl="git@github.com:DaoHuyTuan/static-server.git"
 
@@ -36,15 +36,13 @@ cloneProject() {
 	fi
 }
 changeDirStaticServer() {
-	cd $path_static_server/$gitStaticServerName
+	cd $path_app/$gitStaticServerName
 	if [ ! $? -eq 0 ]; then
-		echo "cd $path_static_server/$gitStaticServerName ERROR"
+		echo "cd $path_app/$gitStaticServerName ERROR"
 		exit 1
 	fi
 }
 cloneStaticServer() {
-	cd ..
-	sudo rm -rf $path_static_server
 	mkdir -p $path_static_server
 	echo "CLONE static server"
 	ls
@@ -120,13 +118,12 @@ pullProjectStatic() {
 		echo "git pull $gitBranch ERROR"
 		exit 1
 	fi
+	npm install
 }
 
 buildDockerImage() {
 	echo "run Docker Build"
-	# changeDir
-	ls
-	cd ..
+	changeDir
 	docker build -t $app .
 	if [ ! $? -eq 0 ]; then
 		echo "docker build ERROR"
