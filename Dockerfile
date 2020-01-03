@@ -9,7 +9,7 @@ RUN npm run clean
 RUN npm run build
 COPY . ./
 RUN ls
-COPY public ./static-server/
+COPY ./public ./static-server/
 RUN cd static-server
 RUN npm run serve public
 EXPOSE 7000
