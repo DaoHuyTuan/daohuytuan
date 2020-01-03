@@ -48,14 +48,8 @@ cloneStaticServer() {
 		rmdir $path_static_server
     	exit 1
 	fi
-	setUpStaticServer
 }
-setUpStaticServer() {
-	npm install
-	cp $path_app/public $path_static_server/
-	ls
-	npm run serve build
-}
+
 pullProject() {
 	echo "PULL project"
 	changeDir
