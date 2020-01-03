@@ -124,8 +124,9 @@ pullProjectStatic() {
 
 buildDockerImage() {
 	echo "run Docker Build"
-	changeDir
-
+	# changeDir
+	ls
+	cd ..
 	docker build -t $app .
 	if [ ! $? -eq 0 ]; then
 		echo "docker build ERROR"
