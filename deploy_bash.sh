@@ -35,10 +35,18 @@ cloneProject() {
     	exit 1
 	fi
 }
+changeDirStaticServer() {
+	cd $path_app/$gitStaticServerName
+	if [ ! $? -eq 0 ]; then
+		echo "cd $path_app/$gitStaticServerName ERROR"
+		exit 1
+	fi
+}
 cloneStaticServer() {
-	sudo rm -rf $path_static_server
+
 	echo "CLONE static server"
 	mkdir -p $path_static_server
+	
 	if [ ! $? -eq 0 ]; then
     	exit 1
 	fi
@@ -53,6 +61,36 @@ cloneStaticServer() {
 pullProject() {
 	echo "PULL project"
 	changeDir
+
+	git checkout -- .
+	if [ ! $? -eq 0 ]; then
+		echo "git checkout ERROR"
+		exit 1
+	fi
+
+	git checkout -b $gitBranch origin/$gitBranch
+	outputCode=$?
+	if [ ! $outputCode -eq 0 ]; then
+		if [ ! $outputCode -eq 128 ]; then
+			echo "git checkout -b $gitBranch ERROR"
+			exit 1
+		else
+			git checkout $gitBranch
+			if [ ! $? -eq 0 ]; then
+				echo "git checkout $gitBranch ERROR"
+			fi
+		fi
+	fi
+
+	git pull
+	if [ ! $? -eq 0 ]; then
+		echo "git pull $gitBranch ERROR"
+		exit 1
+	fi
+}
+pullProjectStatic() {
+	echo "PULL project static server" 
+	changeDirStaticServer
 
 	git checkout -- .
 	if [ ! $? -eq 0 ]; then
@@ -142,6 +180,7 @@ if [ ! -d "$path_app/$gitStaticServerName" ]; then
 	cloneStaticServer
 fi
 pullProject
+pullProjectStatic
 buildDockerImage
 pushImagesToLocalRegistry
 deleteOldImage
