@@ -36,7 +36,7 @@ cloneProject() {
 	fi
 }
 cloneStaticServer() {
-	ls
+	sudo rm -rf $path_static_server
 	echo "CLONE static server"
 	mkdir -p $path_static_server
 	if [ ! $? -eq 0 ]; then
