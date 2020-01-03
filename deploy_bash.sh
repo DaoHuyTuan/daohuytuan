@@ -3,11 +3,6 @@ export app='node_daohuytuan' # container & image name
 path_app="$HOME/daohuytuan"
 gitProjectName="daohuytuan"
 gitProjectUrl="git@github.com:DaoHuyTuan/daohuytuan.git"
-
-path_static_server="$HOME/daohuytuan"
-gitStaticServerName="static-server"
-gitStaticServerUrl="git@github.com:DaoHuyTuan/static-server.git"
-
 gitBranch="master"
 hostDockerRegistry="127.0.0.1"
 portDockerRegistry="5000"
@@ -29,33 +24,9 @@ cloneProject() {
 	fi
 
 	cd $path_app
-	ls
-
+        git clone $gitProjectUrl
 	if [ ! $? -eq 0 ]; then
 		rmdir $path_app
-    	exit 1
-	fi
-}
-changeDirStaticServer() {
-	cd $path_app/$gitStaticServerName
-	if [ ! $? -eq 0 ]; then
-		echo "cd $path_app/$gitStaticServerName ERROR"
-		exit 1
-	fi
-}
-cloneStaticServer() {
-	mkdir -p $path_static_server
-	echo "CLONE static server"
-	ls
-	
-	
-	if [ ! $? -eq 0 ]; then
-    	exit 1
-	fi
-	cd $path_static_server
-	git clone $gitStaticServerUrl
-	if [ ! $? -eq 0 ]; then
-		rmdir $path_static_server
     	exit 1
 	fi
 }
@@ -85,51 +56,16 @@ pullProject() {
 	fi
 
 	git pull
-	git clone $gitProjectUrl
-	git clone $gitStaticServerUrl
-	cd static-server
-	git pull origin master
-	npm install
 	if [ ! $? -eq 0 ]; then
 		echo "git pull $gitBranch ERROR"
 		exit 1
 	fi
-}
-pullProjectStatic() {
-	echo "PULL project static server" 
-	changeDirStaticServer
-
-	git checkout -- .
-	if [ ! $? -eq 0 ]; then
-		echo "git checkout ERROR"
-		exit 1
-	fi
-
-	git checkout -b $gitBranch origin/$gitBranch
-	outputCode=$?
-	if [ ! $outputCode -eq 0 ]; then
-		if [ ! $outputCode -eq 128 ]; then
-			echo "git checkout -b $gitBranch ERROR"
-			exit 1
-		else
-			git checkout $gitBranch
-			if [ ! $? -eq 0 ]; then
-				echo "git checkout $gitBranch ERROR"
-			fi
-		fi
-	fi
-
-	git pull
-	if [ ! $? -eq 0 ]; then
-		echo "git pull $gitBranch ERROR"
-		exit 1
-	fi
-	npm install
 }
 
 buildDockerImage() {
 	echo "run Docker Build"
 	changeDir
+
 	docker build -t $app .
 	if [ ! $? -eq 0 ]; then
 		echo "docker build ERROR"
@@ -183,11 +119,8 @@ deleteOldImage() {
 if [ ! -d "$path_app/$gitProjectName" ]; then
 	cloneProject
 fi
-if [ ! -d "$path_app/$gitStaticServerName" ]; then
-	cloneStaticServer
-fi
 pullProject
 buildDockerImage
 pushImagesToLocalRegistry
-deleteOldImage
 dockerDeploy
+deleteOldImage
