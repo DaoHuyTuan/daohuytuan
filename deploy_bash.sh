@@ -43,7 +43,8 @@ changeDirStaticServer() {
 	fi
 }
 cloneStaticServer() {
-
+	cd ..
+	ls
 	echo "CLONE static server"
 	ls
 	mkdir -p $path_static_server
