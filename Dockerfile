@@ -9,3 +9,4 @@ RUN npm run clean
 RUN npm run build
 COPY . ./
 EXPOSE 7000
+
