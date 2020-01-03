@@ -8,10 +8,9 @@ RUN npm install -g gatsby-cli
 RUN npm run clean
 RUN npm run build
 COPY . ./
-RUN ls
+RUN cd .. 
+RUN ls 
 RUN cd static-server
-RUN cp /daohuytuan/public /static-server/
 RUN ls
-RUN npm run serve public
 EXPOSE 7000
 
