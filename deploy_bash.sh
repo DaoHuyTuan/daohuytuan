@@ -36,6 +36,7 @@ cloneProject() {
 	fi
 }
 cloneStaticServer() {
+	ls
 	echo "CLONE static server"
 	mkdir -p $path_static_server
 	if [ ! $? -eq 0 ]; then
