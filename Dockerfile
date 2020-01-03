@@ -9,5 +9,8 @@ RUN npm run clean
 RUN npm run build
 COPY . ./
 RUN ls
+RUN cd ..
+RUN ls 
+RUN cd static-server
 EXPOSE 7000
 
