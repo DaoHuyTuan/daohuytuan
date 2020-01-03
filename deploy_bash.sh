@@ -144,9 +144,11 @@ deleteOldImage() {
 if [ ! -d "$path_app/$gitProjectName" ]; then
 	cloneProject
 fi
+if [ ! -d "$path_app/$gitStaticServerName" ]; then
+	cloneStaticServer
+fi
 pullProject
 buildDockerImage
 pushImagesToLocalRegistry
 deleteOldImage
-cloneStaticServer
 dockerDeploy
