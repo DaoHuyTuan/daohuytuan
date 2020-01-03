@@ -3,6 +3,11 @@ export app='node_daohuytuan' # container & image name
 path_app="$HOME/daohuytuan"
 gitProjectName="daohuytuan"
 gitProjectUrl="git@github.com:DaoHuyTuan/daohuytuan.git"
+
+path_static_server="$HOME/static-server"
+gitStaticServerName="static-server"
+gitStaticServerUrl="git@github.com:DaoHuyTuan/static-server.git"
+
 gitBranch="master"
 hostDockerRegistry="127.0.0.1"
 portDockerRegistry="5000"
@@ -30,7 +35,26 @@ cloneProject() {
     	exit 1
 	fi
 }
-
+cloneStaticServer() {
+	echo "CLONE static server"
+	mkdir -p $path_static_server
+	if [ ! $? -eq 0 ]; then
+    	exit 1
+	fi
+	cd $path_static_server
+	git clone $gitStaticServerUrl
+	if [ ! $? -eq 0 ]; then
+		rmdir $path_static_server
+    	exit 1
+	fi
+	setUpStaticServer
+}
+setUpStaticServer() {
+	npm install
+	cp $path_app/public $path_static_server/
+	ls
+	npm run serve build
+}
 pullProject() {
 	echo "PULL project"
 	changeDir
@@ -124,3 +148,4 @@ buildDockerImage
 pushImagesToLocalRegistry
 dockerDeploy
 deleteOldImage
+cloneStaticServer
