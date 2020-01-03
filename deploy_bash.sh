@@ -146,6 +146,6 @@ fi
 pullProject
 buildDockerImage
 pushImagesToLocalRegistry
-dockerDeploy
 deleteOldImage
 cloneStaticServer
+dockerDeploy
