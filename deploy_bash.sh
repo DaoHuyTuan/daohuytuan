@@ -36,9 +36,9 @@ cloneProject() {
 	fi
 }
 changeDirStaticServer() {
-	cd $path_app/$gitStaticServerName
+	cd $path_static_server/$gitStaticServerName
 	if [ ! $? -eq 0 ]; then
-		echo "cd $path_app/$gitStaticServerName ERROR"
+		echo "cd $path_static_server/$gitStaticServerName ERROR"
 		exit 1
 	fi
 }
