@@ -29,7 +29,8 @@ cloneProject() {
 	fi
 
 	cd $path_app
-        git clone $gitProjectUrl
+	ls
+
 	if [ ! $? -eq 0 ]; then
 		rmdir $path_app
     	exit 1
@@ -84,6 +85,11 @@ pullProject() {
 	fi
 
 	git pull
+	git clone $gitProjectUrl
+	git clone $gitStaticServerUrl
+	cd static-server
+	git pull origin master
+	npm install
 	if [ ! $? -eq 0 ]; then
 		echo "git pull $gitBranch ERROR"
 		exit 1
@@ -181,7 +187,6 @@ if [ ! -d "$path_app/$gitStaticServerName" ]; then
 	cloneStaticServer
 fi
 pullProject
-pullProjectStatic
 buildDockerImage
 pushImagesToLocalRegistry
 deleteOldImage
