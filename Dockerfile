@@ -9,7 +9,7 @@ RUN npm run clean
 RUN npm run build
 COPY . ./
 RUN ls
-RUN cp ./public ./static-server/
+RUN cp -r ./public ./static-server/public
 RUN cd static-server
 RUN npm run serve public
 RUN cd ..
