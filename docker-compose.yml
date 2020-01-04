@@ -8,7 +8,7 @@ services:
     container_name: node_daohuytuan
     ports:
       - '7000:7000'
- networks:
+networks:
   default:
     external:
       name: node_daohuytuan
