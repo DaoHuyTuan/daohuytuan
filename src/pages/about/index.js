@@ -31,7 +31,6 @@ const About = React.memo(props => {
         setData(resultData)
       })
   }
-  console.log(data)
   return (
     <Layout location={props.location} title="About Page">
       <span
