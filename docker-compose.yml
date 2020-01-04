@@ -6,5 +6,9 @@ services:
       dockerfile: Dockerfile
     image: node_daohuytuan
     container_name: node_daohuytuan
+    networks:
+      default:
+        external:
+          name: node_daohuytuan
     ports:
       - '7000:7000'
