@@ -10,7 +10,8 @@ const TagsPage = ({ ...props }) => {
   const [arrayPosts, setArrayPosts] = useState(data.allMarkdownRemark.edges)
   return (
     <Layout location={location} title="Tags">
-      <TagLabel>{pageContext.tagName}</TagLabel>
+      <TagLabel>{"#" + pageContext.tagName}</TagLabel>
+      {/* <span>List blogs with {pageContext.tagName} tags</span> */}
       <div>
         {arrayPosts.map(post => {
           return (
@@ -29,6 +30,7 @@ const TagsPage = ({ ...props }) => {
                 </h3>
                 <TagWrapper>
                   {post.node.frontmatter.tags.map((item, index) => {
+                    console.log(item)
                     return (
                       <Tag key={index} tag={item}>
                         {item}
