@@ -38,7 +38,11 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
             {post.frontmatter.tags.map((item, index) => {
-              return <Tag key={index}>{item}</Tag>
+              return (
+                <Tag key={index} tag={item}>
+                  {item}
+                </Tag>
+              )
             })}
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />

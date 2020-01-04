@@ -1,34 +1,57 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-
-// Utilities
-import kebabCase from "lodash/kebabCase"
-
-// Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
-
-const TagsPage = ({ pageContext, data }) => {
-  console.log(pageContext)
-  console.log(data)
+import Layout from "../../components/layout"
+import { rhythm } from "../../utils/typography"
+import { TagLabel, TagWrapper } from "../../components/atoms/Tag/Tag.style"
+import Tag from "../../components/atoms/Tag"
+const TagsPage = ({ ...props }) => {
+  const { data, location, pageContext } = props
+  const [arrayPosts, setArrayPosts] = useState(data.allMarkdownRemark.edges)
   return (
-    <div>
-      {/* <Helmet title={title} /> */}
+    <Layout location={location} title="Tags">
+      <TagLabel>{"#" + pageContext.tagName}</TagLabel>
+      {/* <span>List blogs with {pageContext.tagName} tags</span> */}
       <div>
-        <h1>Tags</h1>
-        <ul>
-          {/* {group.map(tag => {
+        {arrayPosts.map(post => {
           return (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
+            <article key={post.node.fields.slug}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                    color: "#f96969",
+                    letterSpacing: "2px",
+                  }}
+                >
+                  <Link to={post.node.fields.slug}>
+                    {post.node.frontmatter.title}
+                  </Link>
+                </h3>
+                <TagWrapper>
+                  {post.node.frontmatter.tags.map((item, index) => {
+                    console.log(item)
+                    return (
+                      <Tag key={index} tag={item}>
+                        {item}
+                      </Tag>
+                    )
+                  })}
+                </TagWrapper>
+                <small>{post.node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: post.node.frontmatter.description,
+                  }}
+                />
+              </section>
+            </article>
           )
-        })} */}
-        </ul>
+        })}
       </div>
-    </div>
+    </Layout>
   )
 }
 
@@ -53,33 +76,24 @@ TagsPage.propTypes = {
 export default TagsPage
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
+  query getPostsByTag($tagName: String) {
     allMarkdownRemark(
-      limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+      filter: { frontmatter: { tags: { eq: $tagName } } }
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "DD/MMMM/YYYY")
             title
             description
             tags
+            date(formatString: "DD/MMMM/YYYY")
           }
         }
-      }
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
       }
     }
   }

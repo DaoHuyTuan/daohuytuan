@@ -22,7 +22,11 @@ const ListBlogs = React.memo(({ posts }) => {
               </h3>
               <TagWrapper>
                 {node.frontmatter.tags.map((item, index) => {
-                  return <Tag key={index}>{item}</Tag>
+                  return (
+                    <Tag key={index} tag={item}>
+                      {item}
+                    </Tag>
+                  )
                 })}
               </TagWrapper>
               <small>{node.frontmatter.date}</small>
