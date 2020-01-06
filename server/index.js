@@ -2,9 +2,10 @@ const express = require("express");
 const compression = require("compression");
 const helmet = require("helmet");
 const next = require("next");
+
 const router = require("./routers");
-// const formData = require("express-form-data");
-// var cookieParser = require("cookie-parser");
+const formData = require("express-form-data");
+var cookieParser = require("cookie-parser");
 const dev = process.env.NODE_ENV !== "production";
 
 async function bootstrap() {
@@ -14,7 +15,7 @@ async function bootstrap() {
   const handle = app.getRequestHandler();
   await app.prepare();
   const server = express();
-  //   server.use(cookieParser());
+  server.use(cookieParser());
 
   server.use(
     compression({
@@ -23,7 +24,7 @@ async function bootstrap() {
   );
 
   server.use(helmet());
-  //   server.use(formData.parse());
+  server.use(formData.parse());
 
   server.use(
     "/",

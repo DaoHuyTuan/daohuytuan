@@ -13,22 +13,13 @@ function getParam(req) {
     // lang: req.params.lang || req.data.lang
   };
 }
+
 router.get("/", (req, res) => {
   const queryParams = getParam(req);
-  req.app.render(req, res, "/blogs", queryParams);
+  req.app.render(req, res, "/", queryParams);
 });
-router.get("/about", (req, res) => {
-  const queryParams = getParam(req);
-  req.app.render(req, res, "/about", queryParams);
-});
-router.get("/blogs", (req, res) => {
-  const queryParams = getParam(req);
-  req.app.render(req, res, "/blogs", queryParams);
-});
-
-// router.get("/news/page/:news_id", (req, res) => {
+// router.get("/posts/:id", (req, res) => {
 //   const queryParams = getParam(req);
-//   req.app.render(req, res, "/news/page", queryParams);
+//   req.app.render(req, res, "/posts", queryParams);
 // });
-
 module.exports = router;
