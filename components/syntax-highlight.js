@@ -1,43 +1,69 @@
-import React from 'react'
+import React from "react";
 
 export default () => (
   <style jsx global>
     {`
-      code[class*='language-'],
-      pre[class*='language-'] {
-        color: #f8f8f2;
+      /**
+       * prism.js default theme for JavaScript, CSS and HTML
+       * Based on dabblet (http://dabblet.com)
+       * @author Lea Verou
+       */
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #abb2bf;
         background: none;
-        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
         text-align: left;
         white-space: pre;
         word-spacing: normal;
         word-break: normal;
         word-wrap: normal;
         line-height: 1.5;
-
         -moz-tab-size: 4;
         -o-tab-size: 4;
         tab-size: 4;
-
         -webkit-hyphens: none;
         -moz-hyphens: none;
         -ms-hyphens: none;
         hyphens: none;
       }
 
-      pre[class*='language-'] {
+      pre[class*="language-"]::-moz-selection,
+      pre[class*="language-"] ::-moz-selection,
+      code[class*="language-"]::-moz-selection,
+      code[class*="language-"] ::-moz-selection {
+        text-shadow: none;
+        background: #383e49;
+      }
+
+      pre[class*="language-"]::selection,
+      pre[class*="language-"] ::selection,
+      code[class*="language-"]::selection,
+      code[class*="language-"] ::selection {
+        text-shadow: none;
+        background: #9aa2b1;
+      }
+
+      @media print {
+        code[class*="language-"],
+        pre[class*="language-"] {
+          text-shadow: none;
+        }
+      }
+      /* Code blocks */
+      pre[class*="language-"] {
         padding: 1em;
         margin: 0.5em 0;
         overflow: auto;
-        border-radius: 0.3em;
       }
 
-      :not(pre) > code[class*='language-'],
-      pre[class*='language-'] {
-        background: #2b2b2b;
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #282c34;
       }
 
-      :not(pre) > code[class*='language-'] {
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
         padding: 0.1em;
         border-radius: 0.3em;
         white-space: normal;
@@ -47,63 +73,64 @@ export default () => (
       .token.prolog,
       .token.doctype,
       .token.cdata {
-        color: #d4d0ab;
+        color: #5c6370;
       }
 
       .token.punctuation {
-        color: #fefefe;
-      }
-
-      .token.property,
-      .token.tag,
-      .token.constant,
-      .token.symbol,
-      .token.deleted {
-        color: #ffa07a;
-      }
-
-      .token.boolean,
-      .token.number {
-        color: #00e0e0;
+        color: #abb2bf;
       }
 
       .token.selector,
+      .token.tag {
+        color: #e06c75;
+      }
+
+      .token.property,
+      .token.boolean,
+      .token.number,
+      .token.constant,
+      .token.symbol,
       .token.attr-name,
+      .token.deleted {
+        color: #d19a66;
+      }
+
       .token.string,
       .token.char,
+      .token.attr-value,
       .token.builtin,
       .token.inserted {
-        color: #abe338;
+        color: #98c379;
       }
 
       .token.operator,
       .token.entity,
       .token.url,
       .language-css .token.string,
-      .style .token.string,
-      .token.variable {
-        color: #00e0e0;
+      .style .token.string {
+        color: #56b6c2;
       }
 
       .token.atrule,
-      .token.attr-value,
-      .token.function {
-        color: #ffd700;
+      .token.keyword {
+        color: #c678dd;
       }
 
-      .token.keyword {
-        color: #00e0e0;
+      .token.function {
+        color: #61afef;
       }
 
       .token.regex,
-      .token.important {
-        color: #ffd700;
+      .token.important,
+      .token.variable {
+        color: #c678dd;
       }
 
       .token.important,
       .token.bold {
         font-weight: bold;
       }
+
       .token.italic {
         font-style: italic;
       }
@@ -112,71 +139,45 @@ export default () => (
         cursor: help;
       }
 
-      @media screen and (-ms-high-contrast: active) {
-        code[class*='language-'],
-        pre[class*='language-'] {
-          color: windowText;
-          background: window;
-        }
-
-        :not(pre) > code[class*='language-'],
-        pre[class*='language-'] {
-          background: window;
-        }
-
-        .token.important {
-          background: highlight;
-          color: window;
-          font-weight: normal;
-        }
-
-        .token.atrule,
-        .token.attr-value,
-        .token.function,
-        .token.keyword,
-        .token.operator,
-        .token.selector {
-          font-weight: bold;
-        }
-
-        .token.attr-value,
-        .token.comment,
-        .token.doctype,
-        .token.function,
-        .token.keyword,
-        .token.operator,
-        .token.property,
-        .token.string {
-          color: highlight;
-        }
-
-        .token.attr-value,
-        .token.url {
-          font-weight: normal;
-        }
+      pre.line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
       }
 
-      // TODO: add this in the prismjs plugin
-      code {
-        padding: 0.1em 0.2em;
-        background-color: #2b2b2b;
-        border-radius: 0.3em;
+      pre.line-numbers > code {
+        position: relative;
       }
 
-      code[class*='language-'],
-      pre[class*='language-'] {
-        font-size: 16px;
-        line-height: 1.3;
+      .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em; /* works for line-numbers below 1000 lines */
+        letter-spacing: -1px;
+        border-right: 0;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
 
-      pre[class*='language-'] {
-        margin-bottom: 1em;
+      .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
       }
 
-      pre[class='language-jsx'] {
-        padding-bottom: 0;
+      .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #5c6370;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
       }
-
       .mdx-marker {
         background-color: rgba(255, 255, 255, 0.1);
         display: block;
@@ -188,4 +189,4 @@ export default () => (
       }
     `}
   </style>
-)
+);
