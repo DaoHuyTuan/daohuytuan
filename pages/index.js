@@ -3,7 +3,7 @@ import _range from 'lodash.range'
 import Link from 'next/link'
 import pagination from 'pagination'
 import Layout from '../components/layouts/default'
-import Post from '../components/blog-index-item'
+import Post from '../components/blogs-components/blog-index-item'
 import blogposts from '../posts/index'
 import { siteMeta } from '../blog.config'
 
@@ -25,11 +25,7 @@ const Blog = ({ router, page = 1 }) => {
   const results = _range(fromResult - 1, toResult)
 
   return (
-    <Layout pageTitle="Blog" path={router.pathname}>
-      <header>
-        <h1>Blog</h1>
-      </header>
-      {console.log(blogposts)}
+    <Layout pageTitle="Hy tứng's Blog" path={router.pathname}>
       {blogposts
         .filter((_post, index) => results.indexOf(index) > -1)
         .map((post, index) => (

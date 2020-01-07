@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { siteMeta } from '../../blog.config'
 import Layout from './default'
-import SyntaxHighlight from '../syntax-highlight'
-import PublishedAt from '../utils/published-at'
+import SyntaxHighlight from '../blogs-components/syntax-highlight'
+import PublishedAt from '../blogs-components/published-at'
 import blogposts from '../../posts/index'
-import NextPrevPost from '../next-prev-post'
+import NextPrevPost from '../blogs-components/next-prev-post'
 
 function BlogPost({ path, meta, children }) {
   const currentPostIndex = blogposts

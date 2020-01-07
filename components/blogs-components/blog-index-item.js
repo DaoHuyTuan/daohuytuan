@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import PublishedAt from './utils/published-at'
+import PublishedAt from './published-at'
 
 const Post = ({ title, summary, date, path }) => (
   <article>
@@ -13,19 +13,6 @@ const Post = ({ title, summary, date, path }) => (
       <PublishedAt link={path} date={date} />
     </header>
     <div className="post-summary">{summary}</div>
-    <style jsx>{`
-      article {
-        margin-bottom: 2em;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      .post-summary {
-        margin-top: 1em;
-      }
-    `}</style>
   </article>
 )
 

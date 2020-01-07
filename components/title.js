@@ -14,21 +14,7 @@ const Title = ({ path }) => (
         </Link>
       </p>
     )}
-    <style jsx>{`
-      h1 {
-        margin-top: 0;
-      }
-
-      a {
-        color: #333;
-        text-decoration: none;
-      }
-
-      p {
-        font-size: 1.3em;
-        font-weight: bold;
-      }
-    `}</style>
+    
   </>
 )
 
