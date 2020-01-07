@@ -1,4 +1,9 @@
 {
     "presets": ["next/babel"],
-    "plugins": ["preval", "macros"]
+    "plugins": ["preval", "macros", [
+        "styled-components",
+        {
+          "ssr": false
+        }
+      ]]
 }
