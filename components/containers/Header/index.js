@@ -1,12 +1,12 @@
-import React from 'react'
-import Title from '../../title'
+import React from "react";
+import Title from "../../title";
 
 function Header({ path }) {
   return (
-      <header>
-        <Title path={path} />
-      </header>
-  )
+    <header>
+      <Title path={path} />
+    </header>
+  );
 }
 
-export default Header
+export default Header;
