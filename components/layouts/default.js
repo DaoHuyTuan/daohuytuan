@@ -7,7 +7,7 @@ function Layout({ path, children, pageTitle, ogImage }) {
   return (
     <Container>
       <Head title={pageTitle} ogImage={ogImage} />
-      <Header path={path} pageTitle={pageTitle} ogImage={ogImage} />
+      <Header path={path} />
       <main>{children}</main>
     </Container>
   )

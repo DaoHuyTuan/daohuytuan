@@ -32,3 +32,5 @@ const feed = new Feed({
   }),
   
 fs.writeFileSync('./public/static/feed.xml', feed.rss2())
+// fs.writeFileSync('./public/static/atom.xml', feed.atom1())
+// fs.writeFileSync('./public/static/feed.json', feed.json1())
