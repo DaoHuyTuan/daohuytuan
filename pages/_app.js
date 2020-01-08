@@ -15,18 +15,19 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps}>
-          <Html lang="en">
-            <Head />
-            <body>
-              <Main />
-              <NextScript />
-            </body>
-          </Html>
-        </Component>
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Drawer />
+          <Component {...pageProps}>
+            <Html lang="en">
+              <Head />
+              <body>
+                <Main />
+                <NextScript />
+              </body>
+            </Html>
+          </Component>
+        </ThemeProvider>
       </>
     );
   }
