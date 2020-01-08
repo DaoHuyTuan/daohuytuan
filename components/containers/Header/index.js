@@ -1,11 +1,13 @@
 import React from "react";
-import Title from "../../title";
-
-function Header({ path }) {
+import Menu from "../Menu";
+import Logo from "../../atoms/Logo";
+import { HeaderWrapper } from "./Header.style";
+function Header() {
   return (
-    <header>
-      <Title path={path} />
-    </header>
+    <HeaderWrapper>
+      <Logo />
+      <Menu />
+    </HeaderWrapper>
   );
 }
 

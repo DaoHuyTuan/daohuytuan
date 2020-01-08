@@ -8,14 +8,14 @@ const feed = new Feed({
   version: 'https://jsonfeed.org/version/1',
   title: siteMeta.title,
   home_page_url: siteMeta.siteUrl,
-  feed_url: `${siteMeta.siteUrl}/feed.json`,
+  feed_url: `${siteMeta.siteUrl}/feed.xml`,
   description: siteMeta.description,
   icon: `${siteMeta.siteUrl}/static/apple-touch-icon-152x152.png`,
   favicon: `${siteMeta.siteUrl}/favicon.ico`,
   author: {
     name: siteMeta.author,
     url: siteMeta.siteUrl,
-    avatar: `${siteMeta.siteUrl}/static/_jolvera-avatar.jpg`,
+    avatar: `${siteMeta.siteUrl}/static/logo.jpg`,
   },
 });
   posts.map(post => {

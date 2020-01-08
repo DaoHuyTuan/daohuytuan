@@ -3,7 +3,7 @@
     "plugins": ["preval", "macros", [
         "styled-components",
         {
-          "ssr": false
+          "ssr": true
         }
       ]]
 }

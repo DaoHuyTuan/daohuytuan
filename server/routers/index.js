@@ -18,8 +18,8 @@ router.get("/", (req, res) => {
   const queryParams = getParam(req);
   req.app.render(req, res, "/", queryParams);
 });
-// router.get("/posts/:id", (req, res) => {
-//   const queryParams = getParam(req);
-//   req.app.render(req, res, "/posts", queryParams);
-// });
+router.get("/about", (req, res) => {
+  const queryParams = getParam(req);
+  req.app.render(req, res, "/about", queryParams);
+});
 module.exports = router;

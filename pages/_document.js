@@ -19,6 +19,7 @@ class MyDocument extends Document {
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
+            <div id="drawer" />
           </>
         ),
       }
