@@ -5,9 +5,6 @@ const About = React.memo(props => {
     return (
         <Layout>
             <span>Hi This is About</span>
-            <Drawer>
-                <span>hello this is modal</span>
-            </Drawer>
         </Layout>
     )
 })
