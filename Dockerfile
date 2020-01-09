@@ -1,9 +1,11 @@
-FROM daohuytuan/daohuytuan:latest
-EXPOSE 7000
+FROM daohuytuan/nodejs10-image:latest
+LABEL maintainer="node_daohuytuan"
 WORKDIR /daohuytuan
-COPY package.json gatsby-node.js gatsby-config.js gatsby-browser.js ./
-RUN npm install
-RUN npm install -g gatsby-cli
 COPY . ./
+RUN rm -rf node_modules
+RUN npm install
+RUN npm run clean
 RUN npm run build
-CMD ["gatsby","serve","-p", "7000", "-H", "0.0.0.0"]
+COPY . ./
+EXPOSE 7000
+CMD ["npm", "run", "serve"]
