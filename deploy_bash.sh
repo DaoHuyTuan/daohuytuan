@@ -73,6 +73,7 @@ buildDockerImage() {
 	else
 		echo "docker build SUCCESS"
 	fi
+	# docker network connect node_daohuytuan node_daohuytuan
 }
 
 pushImagesToLocalRegistry() {
