@@ -10,10 +10,16 @@ const Menu = React.memo(props => {
     <MenuWrapper>
       {menuList.map(item => {
         return item.url.includes(regex) ? (
-          <Label ref={ref} label={item.name} href={item.url} key={item.id} />
+          <Label
+            ref={ref}
+            label={item.name}
+            href={item.url}
+            key={item.id}
+            type="link"
+          />
         ) : (
           <Link href={item.url} key={item.id}>
-            <Label ref={ref} label={item.name} />
+            <Label ref={ref} label={item.name} type="link" />
           </Link>
         );
       })}

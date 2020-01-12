@@ -1,28 +1,28 @@
-import { withRouter } from 'next/router'
-import _range from 'lodash.range'
-import Link from 'next/link'
-import pagination from 'pagination'
-import Layout from '../components/layouts/default'
-import Post from '../components/blogs-components/blog-index-item'
-import blogposts from '../posts/index'
-import { siteMeta } from '../blog.config'
+import { withRouter } from "next/router";
+import _range from "lodash/range";
+import Link from "next/link";
+import pagination from "pagination";
+import Layout from "../components/layouts/default";
+import Post from "../components/blogs-components/blog-index-item";
+import blogposts from "../posts/index";
+import { siteMeta } from "../blog.config";
 
 const Blog = ({ router, page = 1 }) => {
   const paginator = new pagination.SearchPaginator({
-    prelink: '/',
+    prelink: "/",
     current: page,
     rowsPerPage: siteMeta.postsPerPage,
-    totalResult: blogposts.length,
-  })
+    totalResult: blogposts.length
+  });
 
   const {
     previous,
     range,
     next,
     fromResult,
-    toResult,
-  } = paginator.getPaginationData()
-  const results = _range(fromResult - 1, toResult)
+    toResult
+  } = paginator.getPaginationData();
+  const results = _range(fromResult - 1, toResult);
 
   return (
     <Layout pageTitle="Hy tứng's Blog" path={router.pathname}>
@@ -67,11 +67,11 @@ const Blog = ({ router, page = 1 }) => {
         }
       `}</style>
     </Layout>
-  )
-}
+  );
+};
 
 Blog.getInitialProps = async ({ query }) => {
-  return query ? { page: query.page } : {}
-}
+  return query ? { page: query.page } : {};
+};
 
-export default withRouter(Blog)
+export default withRouter(Blog);

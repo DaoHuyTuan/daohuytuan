@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { FONT_THEME, SIZE } from "./variable";
-import { BLACK_THEME } from "./theme"
+import { BLACK_THEME } from "./theme";
 const GlobalStyle = createGlobalStyle`
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -352,6 +352,84 @@ template {
   display: none;
 }
 
+/* montserrat-100 - vietnamese_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../static/fonts/montserrat-v14-vietnamese_latin-100.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Thin'), local('Montserrat-Thin'),
+       url('../static/fonts/montserrat-v14-vietnamese_latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-100.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-100.woff') format('woff'), /* Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-100.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-regular - vietnamese_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../static/fonts/montserrat-v14-vietnamese_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('../static/fonts/montserrat-v14-vietnamese_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-italic - vietnamese_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../static/fonts/montserrat-v14-vietnamese_latin-italic.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Italic'), local('Montserrat-Italic'),
+       url('../static/fonts/montserrat-v14-vietnamese_latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-italic.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-600 - vietnamese_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../static/fonts/montserrat-v14-vietnamese_latin-600.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+       url('../static/fonts/montserrat-v14-vietnamese_latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-600.woff') format('woff'), /* Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-600.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-800 - vietnamese_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../static/fonts/montserrat-v14-vietnamese_latin-800.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+       url('../static/fonts/montserrat-v14-vietnamese_latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-800.woff') format('woff'), /* Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-800.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-900 - vietnamese_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../static/fonts/montserrat-v14-vietnamese_latin-900.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Black'), local('Montserrat-Black'),
+       url('../static/fonts/montserrat-v14-vietnamese_latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-900.woff') format('woff'), /* Modern Browsers */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../static/fonts/montserrat-v14-vietnamese_latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
 // respondsive
 html {
   font-size: 15px;

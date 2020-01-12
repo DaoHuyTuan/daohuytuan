@@ -22,7 +22,7 @@
     "helmet": "^3.21.2",
     "human-date": "^1.4.0",
     "isomorphic-unfetch": "^3.0.0",
-    "lodash.range": "^3.2.0",
+    "lodash": "^4.17.15",
     "mdx-prism": "^0.3.1",
     "micro": "^9.3.3",
     "next": "latest",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@svgr/webpack": "^4.2.0",
     "babel-plugin-styled-components": "^1.10.6",
+    "css-loader": "^3.4.2",
     "prettier": "^1.16.4",
     "rehype": "^8.0.0"
   }
