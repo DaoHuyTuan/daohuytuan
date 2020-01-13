@@ -6,7 +6,7 @@ const LogoWrapper = styled.span`
   cursor: pointer;
   font-family: Montserrat, sans-serif;
   @media only screen and (min-width: ${SIZE.SM}px) {
-    font-weight: 900;
+    font-weight: 800;
     font-size: 2rem;
   }
   @media only screen and (min-width: ${SIZE.LG}px) {

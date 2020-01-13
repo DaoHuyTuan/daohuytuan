@@ -3,12 +3,13 @@ import ClientOnlyPortal from "./ClientOnlyPortal";
 import { DrawerWrapper, DrawerMask, DrawerContent } from "./Drawer.style";
 import drawerReducer from "./reducer";
 import { actionTypes } from "./actionType";
-export default function Drawer({ children, isOpen, classOption }) {
+const Drawer = ({ children, isOpen, classOption, onClose }) => {
   let initState;
   if (classOption) {
     initState = classOption;
   } else {
     initState = {
+      isOpen: false,
       rootClss: ["drawer"],
       maskClss: ["drawer-mask"],
       contentClss: ["drawer-content"]
@@ -32,7 +33,7 @@ export default function Drawer({ children, isOpen, classOption }) {
           <DrawerMask
             isOpen={current.isOpen}
             className={current.maskClss.join(" ")}
-            onClick={() => dispatchCurrent({ type: actionTypes.ON_CLOSE })}
+            onClick={onClose}
           />
           <DrawerContent className={current.contentClss.join(" ")}>
             {children}
@@ -42,3 +43,4 @@ export default function Drawer({ children, isOpen, classOption }) {
     </React.Fragment>
   );
 }
+export default Drawer;

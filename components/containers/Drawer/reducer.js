@@ -12,6 +12,7 @@ const drawerReducer = (state, action) => {
       contentClss.push(activeClass);
       return {
         ...state,
+        isOpen: true,
         rootClss,
         maskClss,
         contentClss
@@ -22,6 +23,7 @@ const drawerReducer = (state, action) => {
       contentClss.splice(contentClss.indexOf(activeClass), 1);
       return {
         ...state,
+        isOpen: false,
         rootClss,
         maskClss,
         contentClss

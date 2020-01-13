@@ -32,8 +32,9 @@ const DrawerContent = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  transform: translate(-100%);
+  transform: translate(-105%);
   transition: 0.3s;
+  box-shadow: 3px 0px 5px #bababa;
   &.drawer-open {
     transform: translate(0%);
     transition: 0.3s;

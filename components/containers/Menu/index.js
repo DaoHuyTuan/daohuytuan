@@ -3,7 +3,8 @@ import { MenuWrapper } from "./Menu.style";
 import Label from "../../atoms/Label";
 import { menuList } from "../Menu/menu";
 import Link from "next/Link";
-const Menu = React.memo(props => {
+import { withRouter } from "next/router";
+const Menu = React.memo(({ router }) => {
   const ref = React.createRef;
   const regex = "http";
   return (
@@ -19,11 +20,11 @@ const Menu = React.memo(props => {
           />
         ) : (
           <Link href={item.url} key={item.id}>
-            <Label ref={ref} label={item.name} type="link" />
+            <Label ref={ref} label={item.name} type="link" activeClass={router.pathname === item.url ? "drawer-active" : ""}/>
           </Link>
         );
       })}
     </MenuWrapper>
   );
 });
-export default Menu;
+export default withRouter(Menu);
