@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLOR_THEME, BLACK_THEME,BLACK_THEME_2 } from "../../../theme/theme";
+import { COLOR_THEME, BLACK_THEME, BLACK_THEME_2 } from "../../../theme/theme";
 import { SIZE } from "../../../theme/variable";
 const typeList = {
   link: `

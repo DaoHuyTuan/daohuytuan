@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { MenuWrapper } from "./Menu.style";
 import Label from "../../atoms/Label";
-import { menuList } from "../Menu/menu";
+import { menuList, handleActiveClass } from "../Menu/menu";
 import Link from "next/Link";
 import { withRouter } from "next/router";
 const Menu = React.memo(({ router }) => {
   const ref = React.createRef;
   const regex = "http";
+  const onHandleActiveClass = useCallback(regex => {
+    const result = handleActiveClass(router.pathname, regex);
+    return result;
+  });
   return (
     <MenuWrapper>
       {menuList.map(item => {
@@ -20,7 +24,12 @@ const Menu = React.memo(({ router }) => {
           />
         ) : (
           <Link href={item.url} key={item.id}>
-            <Label ref={ref} label={item.name} type="link" activeClass={router.pathname === item.url ? "drawer-active" : ""}/>
+            <Label
+              ref={ref}
+              label={item.name}
+              type="link"
+              activeClass={onHandleActiveClass(item.regex)}
+            />
           </Link>
         );
       })}

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { withRouter } from "next/router";
 import Link from "next/Link";
-import { menuList } from "../Menu/menu";
+import { menuList, handleActiveClass } from "../Menu/menu";
 import Menu from "../Menu";
 import Drawer from "../Drawer";
 import Logo from "../../atoms/Logo";
@@ -12,44 +12,41 @@ import nightIcon from "../../../public/static/icons/night.svg";
 import dayIcon from "../../../public/static/icons/sun.svg";
 import closeIcon from "../../../public/static/icons/close.svg";
 import { HeaderWrapper } from "./Header.style";
-import { MenuGroup, MenuWrapperMobile,MenuHeaderMobile } from "../Menu/Menu.style";
-const  Header = React.memo(({ router }) => {
+import {
+  MenuGroup,
+  MenuWrapperMobile,
+  MenuHeaderMobile
+} from "../Menu/Menu.style";
+const Header = React.memo(({ router }) => {
   const ref = React.createRef;
   const regex = "http";
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState({ theme: false, content: nightIcon });
-  const onToggleDrawer = () => {
+  const onToggleDrawer = useCallback(() => {
     setIsOpen(prevState => !prevState);
-  };
+  });
   const onChangeTheme = useCallback(() => {
     setTheme(prevState => ({
       ...prevState,
       theme: !prevState.theme,
-      content: prevState.theme ? dayIcon : nightIcon
+      content: !prevState.theme ? dayIcon : nightIcon
     }));
   });
-  const handleActiveClass = useCallback((url, regex) => {
-    let result;
-    const pathBlogs = "/posts";
-    if(router.pathname.includes(pathBlogs) && name === "Blogs") {
-      result = "drawer-active";
-    } else {
-      if(router.pathname === url) {
-        result = "drawer-active";
-      } else {
-        result = ""
-      }
-    }
-    
+  const onHandleActiveClass = useCallback(regex => {
+    const result = handleActiveClass(router.pathname, regex);
     return result;
-  })
+  });
   return (
     <HeaderWrapper>
       <Drawer isOpen={isOpen} onClose={onToggleDrawer}>
         <MenuWrapperMobile>
           <MenuHeaderMobile>
             <Logo />
-            <IconSVG content={closeIcon} alt="close" handleChange={onToggleDrawer}/>
+            <IconSVG
+              content={closeIcon}
+              alt="close"
+              handleChange={onToggleDrawer}
+            />
           </MenuHeaderMobile>
           {menuList.map(item => {
             return item.url.includes(regex) ? (
@@ -62,7 +59,12 @@ const  Header = React.memo(({ router }) => {
               />
             ) : (
               <Link href={item.url} key={item.id}>
-                <Label ref={ref} label={item.name} type="linkMobile" activeClass={handleActiveClass(item.url, item.regex)}/>
+                <Label
+                  ref={ref}
+                  label={item.name}
+                  type="linkMobile"
+                  activeClass={onHandleActiveClass(item.regex)}
+                />
               </Link>
             );
           })}
@@ -80,6 +82,6 @@ const  Header = React.memo(({ router }) => {
       </MenuGroup>
     </HeaderWrapper>
   );
-})
+});
 
 export default withRouter(Header);
