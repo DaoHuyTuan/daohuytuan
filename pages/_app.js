@@ -4,11 +4,6 @@ import { Html, Head, Main, NextScript } from "next/document";
 import { ThemeProvider } from "styled-components";
 import { ThemeContext, ThemeControlProvider } from "../contexts/theme/reducer";
 import GlobalStyle from "../theme/globalStyle";
-// const theme = {
-//   colors: {
-//     primary: "#0070f3"
-//   }
-// };
 
 class MyApp extends App {
   render() {

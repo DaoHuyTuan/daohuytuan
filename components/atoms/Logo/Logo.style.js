@@ -4,6 +4,8 @@ const LogoWrapper = styled.span`
   font-size: 1.5rem;
   font-weight: 800;
   cursor: pointer;
+  transition: 0.5s;
+  color: ${props => (props.theme.stateTheme.light ? "" : "#ffffff")};
   font-family: Montserrat, sans-serif;
   @media only screen and (min-width: ${SIZE.SM}px) {
     font-weight: 800;
