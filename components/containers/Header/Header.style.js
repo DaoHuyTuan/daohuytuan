@@ -5,9 +5,11 @@ const HeaderWrapper = styled.div`
   flex-flow: row;
   justify-content: space-between;
   height: 80px;
-  box-shadow: 0px 0px 5px #ddd;
+  box-shadow  : 0px 0px 5px #ddd;
   align-items: center;
   padding: 0px 20px 0px 20px;
+  ${props => console.log(props)}
 `;
+
 
 export { HeaderWrapper };

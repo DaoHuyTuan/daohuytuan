@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import { withRouter } from "next/router";
 import Link from "next/Link";
 import { menuList, handleActiveClass } from "../Menu/menu";
@@ -12,6 +12,7 @@ import nightIcon from "../../../public/static/icons/night.svg";
 import dayIcon from "../../../public/static/icons/sun.svg";
 import closeIcon from "../../../public/static/icons/close.svg";
 import { HeaderWrapper } from "./Header.style";
+import { ThemeContext } from "../../../contexts/theme/reducer";
 import {
   MenuGroup,
   MenuWrapperMobile,
@@ -21,11 +22,13 @@ const Header = React.memo(({ router }) => {
   const ref = React.createRef;
   const regex = "http";
   const [isOpen, setIsOpen] = useState(false);
+  const { dispatch } = useContext(ThemeContext);
   const [theme, setTheme] = useState({ theme: false, content: nightIcon });
   const onToggleDrawer = useCallback(() => {
     setIsOpen(prevState => !prevState);
   });
   const onChangeTheme = useCallback(() => {
+    dispatch({type: "TOGGLE"})
     setTheme(prevState => ({
       ...prevState,
       theme: !prevState.theme,

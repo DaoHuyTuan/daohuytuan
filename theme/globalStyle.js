@@ -26,6 +26,7 @@ html {
 
 body {
   margin: 0;
+  background-color: ${props => props.theme.stateTheme.theme.bg}
 }
 
 /**

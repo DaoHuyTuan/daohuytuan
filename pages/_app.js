@@ -1,32 +1,44 @@
 import App from "next/app";
-import React from "react";
+import React, { useContext } from "react";
 import { Html, Head, Main, NextScript } from "next/document";
 import { ThemeProvider } from "styled-components";
+import { ThemeContext, ThemeControlProvider } from "../contexts/theme/reducer";
 import GlobalStyle from "../theme/globalStyle";
-const theme = {
-  colors: {
-    primary: "#0070f3"
-  }
-};
+// const theme = {
+//   colors: {
+//     primary: "#0070f3"
+//   }
+// };
 
-export default class MyApp extends App {
+class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
+
     return (
       <>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <Component {...pageProps}>
-            <Html lang="en">
-              <Head />
-              <body>
-                <Main />
-                <NextScript />
-              </body>
-            </Html>
-          </Component>
-        </ThemeProvider>
+        <ThemeControlProvider>
+          <Roots Components={Component} pageProps={pageProps} />
+        </ThemeControlProvider>
       </>
     );
   }
 }
+export const Roots = React.memo(props => {
+  const { stateTheme } = useContext(ThemeContext);
+  const { Components, pageProps } = props;
+  return (
+    <ThemeProvider theme={{ stateTheme }}>
+      <GlobalStyle />
+      <Components {...pageProps}>
+        <Html lang="en">
+          <Head />
+          <body>
+            <Main />
+            <NextScript />
+          </body>
+        </Html>
+      </Components>
+    </ThemeProvider>
+  );
+});
+export default MyApp;
