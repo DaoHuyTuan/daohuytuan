@@ -8,11 +8,10 @@ import Logo from "../../atoms/Logo";
 import Label from "../../atoms/Label";
 import IconSVG from "../../atoms/IconSVG";
 import HambugerMenu from "../../atoms/HambugerMenu";
-import nightIcon from "../../../public/static/icons/night.svg";
-import dayIcon from "../../../public/static/icons/sun.svg";
+import searchIcon from "../../../public/static/icons/search.svg";
 import closeIcon from "../../../public/static/icons/close.svg";
 import { HeaderWrapper } from "./Header.style";
-import { ThemeContext } from "../../../contexts/theme/reducer";
+// import { ThemeContext } from "../../../contexts/theme/reducer";
 import {
   MenuGroup,
   MenuWrapperMobile,
@@ -22,19 +21,19 @@ const Header = React.memo(({ router }) => {
   const ref = React.createRef;
   const regex = "http";
   const [isOpen, setIsOpen] = useState(false);
-  const { dispatch } = useContext(ThemeContext);
-  const [theme, setTheme] = useState({ theme: false, content: nightIcon });
+  // const { dispatch } = useContext(ThemeContext);
+  // const [theme, setTheme] = useState({ theme: false, content: nightIcon });
   const onToggleDrawer = useCallback(() => {
     setIsOpen(prevState => !prevState);
   });
-  const onChangeTheme = useCallback(() => {
-    dispatch({type: "TOGGLE"})
-    setTheme(prevState => ({
-      ...prevState,
-      theme: !prevState.theme,
-      content: !prevState.theme ? dayIcon : nightIcon
-    }));
-  });
+  // const onChangeTheme = useCallback(() => {
+  //   dispatch({ type: "TOGGLE" });
+  //   setTheme(prevState => ({
+  //     ...prevState,
+  //     theme: !prevState.theme,
+  //     content: !prevState.theme ? dayIcon : nightIcon
+  //   }));
+  // });
   const onHandleActiveClass = useCallback(regex => {
     const result = handleActiveClass(router.pathname, regex);
     return result;
@@ -44,7 +43,9 @@ const Header = React.memo(({ router }) => {
       <Drawer isOpen={isOpen} onClose={onToggleDrawer}>
         <MenuWrapperMobile>
           <MenuHeaderMobile>
-            <Logo />
+            <Link href="/">
+              <Logo />
+            </Link>
             <IconSVG
               content={closeIcon}
               alt="close"
@@ -74,14 +75,12 @@ const Header = React.memo(({ router }) => {
         </MenuWrapperMobile>
       </Drawer>
       <HambugerMenu onToggle={onToggleDrawer} />
-      <Logo />
+      <Link href="/">
+        <Logo />
+      </Link>
       <MenuGroup>
         <Menu />
-        <IconSVG
-          content={theme.content}
-          alt="theme"
-          handleChange={onChangeTheme}
-        />
+        <IconSVG content={searchIcon} alt="search" />
       </MenuGroup>
     </HeaderWrapper>
   );

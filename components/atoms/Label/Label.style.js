@@ -8,7 +8,7 @@ const handleTypeLabel = (type, themeData) => {
   switch (type) {
     case "link":
       return (result = `
-      margin-right: 20px;
+      margin-right: 30px;
       font-size: 1.1rem;
       font-weight: 600;
       color: ${theme.color}

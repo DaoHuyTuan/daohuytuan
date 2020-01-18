@@ -433,6 +433,9 @@ template {
        url('../static/fonts/montserrat-v14-vietnamese_latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
 // respondsive
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 15px;
   font-family: ${FONT_THEME};
