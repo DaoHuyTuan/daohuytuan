@@ -1,7 +1,9 @@
 import { ContainerWrapper } from "./Container.style";
-const Container = ({ children }) => (
+const Container = ({ children, clssName }) => (
   <>
-    <div>{children}</div>
+    <ContainerWrapper className={clssName ? clssName : ""}>
+      {children}
+    </ContainerWrapper>
   </>
 );
 

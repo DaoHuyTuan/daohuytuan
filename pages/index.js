@@ -6,6 +6,7 @@ import Layout from "../components/layouts/default";
 import Post from "../components/blogs-components/blog-index-item";
 import blogposts from "../posts/index";
 import { siteMeta } from "../blog.config";
+import Bio from "../components/containers/Bio";
 
 const Blog = ({ router, page = 1 }) => {
   const paginator = new pagination.SearchPaginator({
@@ -26,6 +27,7 @@ const Blog = ({ router, page = 1 }) => {
 
   return (
     <Layout pageTitle="Hy tứng's Blog" path={router.pathname}>
+      <Bio />
       {blogposts
         .filter((_post, index) => results.indexOf(index) > -1)
         .map((post, index) => (
@@ -37,7 +39,6 @@ const Blog = ({ router, page = 1 }) => {
             path={post.path}
           />
         ))}
-
       <ul>
         {previous && (
           <li>

@@ -9,14 +9,15 @@ const handleTypeLabel = (type, themeData) => {
     case "link":
       return (result = `
       margin-right: 30px;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: ${theme.color}
       text-decoration: none;
+      font-family: monospace;
       cursor: pointer;
       transition: color 0.5s;
       &.drawer-active {
-        color: ${theme.color}
+        color: ${COLOR_THEME}
         position: relative;
         transition: color 0.5s;
         @media only screen and (min-width: ${SIZE.MD}px) {
@@ -25,7 +26,7 @@ const handleTypeLabel = (type, themeData) => {
             width: 100%;
             height: 2px;
             display: block;
-            background-color: ${theme.color};
+            background-color: ${COLOR_THEME};
             position: absolute;
             margin-top: 5px;
           }
@@ -44,14 +45,14 @@ const handleTypeLabel = (type, themeData) => {
       &.drawer-active {
         font-weight: 600;
         position: relative;
-        color: ${BLACK_THEME}
+        color: ${COLOR_THEME}
         @media only screen and (max-width: ${SIZE.MD}px) {
           &:after {
             content: "";
             width: 18%;
             height: 2px;
             display: block;
-            background-color: ${BLACK_THEME};;
+            background-color: ${COLOR_THEME};;
             position: absolute;
             margin-top: 20px;
           }
