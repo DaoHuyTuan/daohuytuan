@@ -1,4 +1,4 @@
-import preval from 'babel-plugin-preval/macro'
+import preval from "babel-plugin-preval/macro";
 
 /**
  * The preval plugin pre-evaluates code at build time. We use this to get the
@@ -11,6 +11,8 @@ import preval from 'babel-plugin-preval/macro'
 
 const posts = preval`
     module.exports = require('./get-blog-posts.js');
-`
-
-module.exports = posts
+`;
+const tils = preval`
+    module.exports = require('./get-til-posts.js');
+`;
+module.exports = { posts, tils };

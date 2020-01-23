@@ -3,13 +3,13 @@ import { siteMeta } from "../../blog.config";
 import Layout from "./default";
 import SyntaxHighlight from "../blogs-components/syntax-highlight";
 import PublishedAt from "../blogs-components/published-at";
-import { posts } from "../../posts/index";
+import { tils } from "../../posts/index";
 import NextPrevPost from "../blogs-components/next-prev-post";
 
-function BlogPost({ path, meta, children }) {
-  const currentPostIndex = posts.map(({ title }) => title).indexOf(meta.title);
-  const previousPost = posts[currentPostIndex + 1];
-  const nextPost = posts[currentPostIndex - 1];
+function TilsPost({ path, meta, children }) {
+  const currentPostIndex = tils.map(({ title }) => title).indexOf(meta.title);
+  const previousPost = tils[currentPostIndex + 1];
+  const nextPost = tils[currentPostIndex - 1];
 
   return (
     <Layout pageTitle={meta.title} ogImage={meta.image}>
@@ -81,4 +81,4 @@ function BlogPost({ path, meta, children }) {
   );
 }
 
-export default BlogPost;
+export default TilsPost;

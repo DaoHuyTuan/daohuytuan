@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 const DrawerWrapper = styled.div`
   position: fixed;
-  width:0;
+  width: 0;
   top: 0;
   left: 0;
   bottom: 0;
   transition: 0.3s;
-    &.drawer-open {
-      width: 100%;
-      height: 100%;
+  z-index: 9999;
+  &.drawer-open {
+    width: 100%;
+    height: 100%;
   }
 `;
 const DrawerMask = styled.div`
@@ -24,7 +25,6 @@ const DrawerMask = styled.div`
     opacity: 0.3;
     height: 100%;
   }
-
 `;
 const DrawerContent = styled.div`
   width: 300px;
