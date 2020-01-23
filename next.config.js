@@ -1,3 +1,9 @@
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true"
+});
+
+module.exports = withBundleAnalyzer({});
+
 const withMDX = require("@zeit/next-mdx")({
   extension: /.mdx?$/,
   options: {
@@ -52,9 +58,3 @@ module.exports = withMDX({
     return config;
   }
 });
-
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true"
-});
-
-module.exports = withBundleAnalyzer({});

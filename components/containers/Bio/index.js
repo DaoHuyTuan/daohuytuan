@@ -5,7 +5,8 @@ import {
   Avatar,
   AvatarBorder,
   BioTitle,
-  BioContent
+  BioContent,
+  BioBody
 } from "./Bio.style";
 import avatar from "../../../public/static/images/avatar.svg";
 const Bio = React.memo(props => {
@@ -15,12 +16,14 @@ const Bio = React.memo(props => {
         <AvatarBorder>
           <Avatar src={avatar} />
         </AvatarBorder>
-        <BioTitle>Hey! I’m David</BioTitle>
-        <BioContent>
-          Breakfast procuring no end happiness allowance assurance frank. Met
-          simplicity nor difficulty unreserved who. Entreaties mr conviction
-          dissimilar me astonished estimating cultivated.
-        </BioContent>
+        <BioBody>
+          <BioTitle>Hey! I’m David</BioTitle>
+          <BioContent>
+            Breakfast procuring no end happiness allowance assurance frank. Met
+            simplicity nor difficulty unreserved who. Entreaties mr conviction
+            dissimilar me astonished estimating cultivated.
+          </BioContent>
+        </BioBody>
       </BioWrapper>
     </Container>
   );

@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { SIZE } from "../../../theme/variable";
+const sizeAvatar = 200;
+const sizeBorderAvatar = 8;
 
 const BioWrapper = styled.div`
   width: 940px;
@@ -10,12 +13,19 @@ const BioWrapper = styled.div`
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
+    flex-flow: row;
+  }
 `;
 const Avatar = styled.img`
-  width: 200px;
-  height: 200px;
+  width: ${sizeAvatar}px;
+  height: ${sizeAvatar}px;
   border-radius: 100%;
   background-color: #ffffff;
+  @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
+    width: ${sizeAvatar - 50}px;
+    height: ${sizeAvatar - 50}px;
+  }
 `;
 const AvatarBorder = styled.div`
   cursor: pointer;
@@ -34,14 +44,31 @@ const AvatarBorder = styled.div`
     #be1e96,
     #ae27a8
   );
-  width: 208px;
-  height: 208px;
+  width: ${sizeAvatar + sizeBorderAvatar}px;
+  height: ${sizeAvatar + sizeBorderAvatar}px;
   border-radius: 50%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 24px;
+  @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
+    width: ${sizeAvatar + sizeBorderAvatar - 50}px;
+    height: ${sizeAvatar + sizeBorderAvatar - 50}px;
+  }
+`;
+const BioBody = styled.div`
+  display: flex;
+  width: calc(100% - ${sizeAvatar + sizeBorderAvatar}px);
+  padding-left: 20px;
+  flex-flow: column;
+  @media only screen and (max-width: ${SIZE.SM}px) {
+    width: 100%;
+    text-align: center;
+  }
+  @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
+    width: calc(100% - ${sizeAvatar + sizeBorderAvatar - 50}px);
+  }
 `;
 const BioTitle = styled.span`
   font-size: 30px;
@@ -50,8 +77,7 @@ const BioTitle = styled.span`
 `;
 const BioContent = styled.span`
   font-size: 16px;
-  text-align: center;
   line-height: 2;
   word-break: break-word;
 `;
-export { BioWrapper, Avatar, AvatarBorder, BioTitle, BioContent };
+export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent };
