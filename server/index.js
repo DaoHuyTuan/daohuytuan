@@ -44,9 +44,9 @@ async function bootstrap() {
     return handle(req, res);
   });
   if (dev) {
-    server.listen(3001, err => {
+    server.listen(3002, err => {
       if (err) throw err;
-      console.log("> Ready on http://localhost:3001");
+      console.log("> Ready on http://localhost:3002");
     });
   } else {
     server.listen(7000, err => {

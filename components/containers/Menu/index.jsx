@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import { MenuWrapper } from "./Menu.style";
 import Label from "../../atoms/Label";
-import { menuList, handleActiveClass } from "../Menu/menu";
-import Link from "next/Link";
+import { menuList, handleActiveClass } from "./menu";
+import Link from "next/link";
 import { withRouter } from "next/router";
 const Menu = React.memo(({ router }) => {
   const ref = React.createRef;

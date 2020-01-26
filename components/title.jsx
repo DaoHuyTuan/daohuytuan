@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import { siteMeta } from '../blog.config'
+import Link from "next/link";
+import { siteMeta } from "../blog.config";
 
-const Title = ({ path }) => (
+const Title = React.memo(({ path }) => {
   <>
-    {path === '/' ? (
+    {path === "/" ? (
       <h1>
         <a href={siteMeta.siteUrl}>{siteMeta.title}</a>
       </h1>
@@ -14,8 +14,7 @@ const Title = ({ path }) => (
         </Link>
       </p>
     )}
-    
-  </>
-)
+  </>;
+});
 
-export default Title
+export default Title;

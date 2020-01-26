@@ -1,3 +1,4 @@
+import React from "react";
 import { withRouter } from "next/router";
 import _range from "lodash/range";
 import Link from "next/link";
@@ -7,15 +8,21 @@ import Post from "../components/blogs-components/blog-index-item";
 import { posts, tils } from "../posts/index";
 import { siteMeta } from "../blog.config";
 import Bio from "../components/containers/Bio";
-
-const Blog = ({ router, page = 1 }) => {
+import CardTIL from "../components/containers/CardTIL";
+import { CardTILContainer } from "../components/containers/CardTIL/CardTIL.style";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import {
+  BlogContainer,
+  BlogLabel
+} from "../components/blogs-components/blog.style";
+const Blog = React.memo(({ router, page = 1, tills }) => {
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
     current: page,
     rowsPerPage: siteMeta.postsPerPage,
     totalResult: posts.length
   });
-  console.log(tils);
   const {
     previous,
     range,
@@ -24,32 +31,66 @@ const Blog = ({ router, page = 1 }) => {
     toResult
   } = paginator.getPaginationData();
   const results = _range(fromResult - 1, toResult);
-
+  console.log(tills);
   return (
     <Layout pageTitle="Hy tứng's Blog" path={router.pathname}>
       <Bio />
-      {tils
-        .filter((_post, index) => results.indexOf(index) > -1)
-        .map((post, index) => (
-          <Post
-            key={index}
-            title={post.title}
-            summary={post.summary}
-            date={post.publishedAt}
-            path={post.path}
-          />
-        ))}
-      {posts
-        .filter((_post, index) => results.indexOf(index) > -1)
-        .map((post, index) => (
-          <Post
-            key={index}
-            title={post.title}
-            summary={post.summary}
-            date={post.publishedAt}
-            path={post.path}
-          />
-        ))}
+      {/* <CardTILContainer>
+        {
+          <Carousel
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 3
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 3
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 3
+              }
+            }}
+          >
+            {tills
+              .filter((_post, index) => results.indexOf(index) > -1)
+              .map((post, index) => (
+                <CardTIL
+                  key={index}
+                  title={post.title}
+                  summary={post.summary}
+                  date={post.publishedAt}
+                  path={post.path}
+                />
+              ))}
+          </Carousel>
+        }
+      </CardTILContainer> */}
+
+      <BlogContainer>
+        <BlogLabel>Blogs</BlogLabel>
+        {posts
+          .filter((_post, index) => results.indexOf(index) > -1)
+          .map((post, index) => (
+            <Post
+              key={index}
+              title={post.title}
+              summary={post.summary}
+              date={post.publishedAt}
+              path={post.path}
+            />
+          ))}
+      </BlogContainer>
       <ul>
         {previous && (
           <li>
@@ -80,10 +121,14 @@ const Blog = ({ router, page = 1 }) => {
       `}</style>
     </Layout>
   );
-};
+});
 
 Blog.getInitialProps = async ({ query }) => {
-  return query ? { page: query.page } : {};
+  let tills = [];
+  if (tils) {
+    tills = tils;
+  }
+  return query ? { page: query.page, tills } : { tills };
 };
 
 export default withRouter(Blog);

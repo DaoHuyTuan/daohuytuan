@@ -187,6 +187,12 @@ export default () => (
         padding-left: 0.75em;
         border-left: 0.25em solid #ffdc00;
       }
+      code {
+        background-color: #282c34;
+        padding: 5px 10px;
+        color: #abb2bf;
+        line-height: 3rem;
+      }
     `}
   </style>
 );

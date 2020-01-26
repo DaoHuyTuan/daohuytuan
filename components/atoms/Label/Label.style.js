@@ -13,7 +13,6 @@ const handleTypeLabel = (type, themeData) => {
       font-weight: 600;
       color: ${theme.color}
       text-decoration: none;
-      font-family: monospace;
       cursor: pointer;
       transition: color 0.5s;
       &.drawer-active {
@@ -52,7 +51,7 @@ const handleTypeLabel = (type, themeData) => {
             width: 18%;
             height: 2px;
             display: block;
-            background-color: ${COLOR_THEME};;
+            background-color: ${COLOR_THEME};
             position: absolute;
             margin-top: 20px;
           }

@@ -13,7 +13,7 @@ const BioWrapper = styled.div`
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-  @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
+  @media only screen and (min-width: ${SIZE.SM}px) {
     flex-flow: row;
   }
 `;
@@ -22,7 +22,7 @@ const Avatar = styled.img`
   height: ${sizeAvatar}px;
   border-radius: 100%;
   background-color: #ffffff;
-  @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
+  @media only screen and (max-width: ${SIZE.MD}px) {
     width: ${sizeAvatar - 50}px;
     height: ${sizeAvatar - 50}px;
   }
@@ -51,16 +51,17 @@ const AvatarBorder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 24px;
-  @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
+
+  @media only screen and (max-width: ${SIZE.MD}px) {
     width: ${sizeAvatar + sizeBorderAvatar - 50}px;
     height: ${sizeAvatar + sizeBorderAvatar - 50}px;
+    margin-bottom: 24px;
   }
 `;
 const BioBody = styled.div`
   display: flex;
   width: calc(100% - ${sizeAvatar + sizeBorderAvatar}px);
-  padding-left: 20px;
+  padding-left: 30px;
   flex-flow: column;
   @media only screen and (max-width: ${SIZE.SM}px) {
     width: 100%;

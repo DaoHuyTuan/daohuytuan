@@ -5,6 +5,12 @@ import SyntaxHighlight from "../blogs-components/syntax-highlight";
 import PublishedAt from "../blogs-components/published-at";
 import { posts } from "../../posts/index";
 import NextPrevPost from "../blogs-components/next-prev-post";
+import {
+  BlogContent,
+  BlogContentTitle,
+  BlogEndLine,
+  PostPagination
+} from "./BlogContent.style";
 
 function BlogPost({ path, meta, children }) {
   const currentPostIndex = posts.map(({ title }) => title).indexOf(meta.title);
@@ -14,34 +20,34 @@ function BlogPost({ path, meta, children }) {
   return (
     <Layout pageTitle={meta.title} ogImage={meta.image}>
       <SyntaxHighlight />
-      <article className="h-entry">
-        <header>
-          <h1 className="p-name">{meta.title}</h1>
+      <BlogContent>
+        <BlogContentTitle>{meta.title}</BlogContentTitle>
 
-          <div>
-            <PublishedAt date={meta.publishedAt} link={path} />
+        <div>
+          <PublishedAt date={meta.publishedAt} link={path} />
 
-            <Link href="/about">
-              <a
-                color="#aaa"
-                rel="author"
-                className="p-author h-card"
-                href="/about"
-              >
-                {siteMeta.author}
-              </a>
-            </Link>
-          </div>
-        </header>
+          <Link href="/about">
+            <a
+              color="#aaa"
+              rel="author"
+              className="p-author h-card"
+              href="/about"
+            >
+              {siteMeta.author}
+            </a>
+          </Link>
+        </div>
         <div className="e-content">{children}</div>
+        <BlogEndLine />
         <footer>
           {(previousPost || nextPost) && (
-            <div className="post-pagination">
+            <PostPagination>
               {previousPost && (
                 <NextPrevPost
                   title={previousPost.title}
                   path={previousPost.path}
                   position="previous"
+                  icon="←"
                 />
               )}
               {nextPost && (
@@ -49,34 +55,13 @@ function BlogPost({ path, meta, children }) {
                   title={nextPost.title}
                   path={nextPost.path}
                   position="next"
+                  icon="→"
                 />
               )}
-            </div>
+            </PostPagination>
           )}
         </footer>
-      </article>
-      <style jsx>{`
-        header {
-          margin-bottom: 2em;
-        }
-
-        [rel="author"] {
-          margin-left: 1em;
-        }
-
-        article {
-          margin-bottom: 2em;
-        }
-
-        footer {
-          margin-top: 2em;
-        }
-
-        .post-pagination {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-        }
-      `}</style>
+      </BlogContent>
     </Layout>
   );
 }

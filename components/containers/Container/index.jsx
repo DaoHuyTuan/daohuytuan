@@ -1,10 +1,10 @@
 import { ContainerWrapper } from "./Container.style";
-const Container = ({ children, clssName }) => (
-  <>
+const Container = React.memo(({ children, clssName }) => {
+  return (
     <ContainerWrapper className={clssName ? clssName : ""}>
       {children}
     </ContainerWrapper>
-  </>
-);
+  );
+});
 
 export default Container;

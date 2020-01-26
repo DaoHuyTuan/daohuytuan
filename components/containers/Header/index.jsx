@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useContext } from "react";
 import { withRouter } from "next/router";
-import Link from "next/Link";
+import Link from "next/link";
 import { menuList, handleActiveClass } from "../Menu/menu";
 import Menu from "../Menu";
 import Drawer from "../Drawer";

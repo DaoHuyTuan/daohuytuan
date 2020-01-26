@@ -3,7 +3,7 @@ import ClientOnlyPortal from "./ClientOnlyPortal";
 import { DrawerWrapper, DrawerMask, DrawerContent } from "./Drawer.style";
 import drawerReducer from "./reducer";
 import { actionTypes } from "./actionType";
-const Drawer = ({ children, isOpen, classOption, onClose }) => {
+const Drawer = React.memo(({ children, isOpen, classOption, onClose }) => {
   let initState;
   if (classOption) {
     initState = classOption;
@@ -42,5 +42,5 @@ const Drawer = ({ children, isOpen, classOption, onClose }) => {
       </ClientOnlyPortal>
     </React.Fragment>
   );
-}
+});
 export default Drawer;
