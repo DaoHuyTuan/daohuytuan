@@ -70,7 +70,7 @@ const Header = React.memo(({ router }) => {
                   ref={ref}
                   label={item.name}
                   type="linkMobile"
-                  activeClass={onHandleActiveClass(item.regex)}
+                  activeClass={() => onHandleActiveClass(item.regex)}
                 />
               </Link>
             );
