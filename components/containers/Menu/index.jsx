@@ -13,26 +13,30 @@ const Menu = React.memo(({ router }) => {
   });
   return (
     <MenuWrapper>
-      {menuList.map(item => {
-        return item.url.includes(regex) ? (
-          <Label
-            ref={ref}
-            label={item.name}
-            href={item.url}
-            key={item.id}
-            type="link"
-          />
-        ) : (
-          <Link href={item.url} key={item.id}>
-            <Label
-              ref={ref}
-              label={item.name}
-              type="link"
-              activeClass={onHandleActiveClass(item.regex)}
-            />
-          </Link>
-        );
-      })}
+      <Link href="/">
+        <Label
+          ref={ref}
+          label="Blogs"
+          type="link"
+          activeClass={router.pathname === "/" ? "drawer-active" : ""}
+        />
+      </Link>
+      <Link href="/about">
+        <Label
+          ref={ref}
+          label="About"
+          type="link"
+          activeClass={router.pathname === "/about" ? "drawer-active" : ""}
+        />
+      </Link>
+      <Link href="/life">
+        <Label
+          ref={ref}
+          label="Life"
+          type="link"
+          activeClass={router.pathname === "/life" ? "drawer-active" : ""}
+        />
+      </Link>
     </MenuWrapper>
   );
 });
