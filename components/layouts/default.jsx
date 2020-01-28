@@ -1,16 +1,17 @@
-import React from 'react'
-import Header from '../containers/Header'
-import Head from '../head'
-import Container from '../containers/Container'
+import React from "react";
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("../containers/Header"));
+const Head = dynamic(() => import("../head"));
+const Container = dynamic(() => import("../containers/Container"));
 
-function Layout({ path, children, pageTitle, ogImage }) {
+const Layout = React.memo(({ path, children, pageTitle, ogImage }) => {
   return (
     <Container>
       <Head title={pageTitle} ogImage={ogImage} />
       <Header path={path} />
       <main>{children}</main>
     </Container>
-  )
-}
+  );
+});
 
-export default Layout
+export default Layout;
