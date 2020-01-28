@@ -22,4 +22,8 @@ router.get("/about", (req, res) => {
   const queryParams = getParam(req);
   req.app.render(req, res, "/about", queryParams);
 });
+router.get("/uses", (req, res) => {
+  const queryParams = getParam(req);
+  req.app.render(req, res, "/uses", queryParams);
+});
 module.exports = router;

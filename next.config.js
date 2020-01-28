@@ -1,7 +1,13 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true"
 });
-
+const withImages = require("next-images");
+module.exports = withImages({
+  inlineImageLimit: 16384,
+  webpack(config, options) {
+    return config;
+  }
+});
 module.exports = withBundleAnalyzer({});
 
 const withMDX = require("@zeit/next-mdx")({
@@ -39,7 +45,7 @@ module.exports = withMDX({
         use: {
           loader: "url-loader",
           options: {
-            limit: 100000,
+            limit: 9999999,
             name: "[name].[ext]"
           }
         }

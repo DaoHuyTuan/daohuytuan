@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { COLOR_THEME, BLACK_THEME, BLACK_THEME_2 } from "../../../theme/theme";
-import { SIZE } from "../../../theme/variable";
+import { SIZE, FONT_THEME } from "../../../theme/variable";
 
 const handleTypeLabel = (type, themeData) => {
   const { light, theme } = themeData;
@@ -67,4 +67,16 @@ const handleTypeLabel = (type, themeData) => {
 const LabelWrapper = styled.a`
   ${props => handleTypeLabel(props.type, props.theme.stateTheme)}
 `;
-export { LabelWrapper };
+const LabelCustom = styled.span`
+  list-style: none;
+  color: ${props => (props.colors ? props.colors : COLOR_THEME)};
+  font-size: ${props => (props.fontSize ? props.fontSize : "14px")};
+  font-weight: ${props => (props.fontWeight ? props.fontWeight : "normal")};
+  font-family: ${props => (props.fontFamily ? props.fontFamily : FONT_THEME)};
+  padding-left: ${props => (props.paddingLeft ? props.paddingLeft : "")};
+  padding-top: ${props => (props.paddingTop ? props.paddingTop : "")};
+  padding-right: ${props => (props.paddingRight ? props.paddingRight : "")};
+  padding-bottom: ${props => (props.paddingBot ? props.paddingBot : "")};
+  margin-bottom: ${props => (props.marginBot ? props.marginBot : "")};
+`;
+export { LabelWrapper, LabelCustom };

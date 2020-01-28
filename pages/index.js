@@ -31,7 +31,6 @@ const Blog = React.memo(({ router, page = 1, tills }) => {
     toResult
   } = paginator.getPaginationData();
   const results = _range(fromResult - 1, toResult);
-  console.log(tills);
   return (
     <Layout pageTitle="Hy tứng's Blog" path={router.pathname}>
       <Bio />

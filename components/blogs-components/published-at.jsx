@@ -19,6 +19,7 @@ function PublishedAt(props) {
           text-decoration: none;
           font-family: Merriweather;
           font-size: 16px;
+          font-weight: bold;
         }
       `}</style>
     </>
