@@ -28,14 +28,16 @@ const Drawer = React.memo(({ children, isOpen, classOption, onClose }) => {
       <ClientOnlyPortal selector="#drawer">
         <DrawerWrapper
           isOpen={current.isOpen}
-          className={current.rootClss.join(" ")}
+          className={current.rootClss ? current.rootClss.join(" ") : ""}
         >
           <DrawerMask
             isOpen={current.isOpen}
-            className={current.maskClss.join(" ")}
+            className={current.maskClss ? current.maskClss.join(" ") : ""}
             onClick={onClose}
           />
-          <DrawerContent className={current.contentClss.join(" ")}>
+          <DrawerContent
+            className={current.contentClss ? current.contentClss.join(" ") : ""}
+          >
             {children}
           </DrawerContent>
         </DrawerWrapper>
