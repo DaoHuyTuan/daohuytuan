@@ -11,6 +11,7 @@ const Menu = React.memo(({ router }) => {
     const result = handleActiveClass(router.pathname, regex);
     return result;
   });
+  console.log("menu");
   return (
     <MenuWrapper>
       <Link href="/">

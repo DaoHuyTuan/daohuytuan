@@ -24,6 +24,7 @@ const Header = React.memo(({ router }) => {
   // const { dispatch } = useContext(ThemeContext);
   // const [theme, setTheme] = useState({ theme: false, content: nightIcon });
   const onToggleDrawer = useCallback(() => {
+    console.log("onToggleDrawer");
     setIsOpen(prevState => !prevState);
   });
   // const onChangeTheme = useCallback(() => {
@@ -35,9 +36,11 @@ const Header = React.memo(({ router }) => {
   //   }));
   // });
   const onHandleActiveClass = useCallback(regex => {
+    console.log("onHandleActiveClass");
     const result = handleActiveClass(router.pathname, regex);
     return result;
   });
+  console.log("hello");
   return (
     <HeaderWrapper>
       <Drawer isOpen={isOpen} onClose={onToggleDrawer}>
