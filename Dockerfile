@@ -2,13 +2,11 @@ FROM daohuytuan/nodejs10-image:latest
 LABEL maintainer="node_daohuytuan"
 WORKDIR /daohuytuan
 COPY . ./
+RUN rm -rf node_modules
 RUN npm install
-RUN npm install -g serve
-RUN npm install -g gatsby-cli
 RUN npm run clean
+RUN npm run build:rss
 RUN npm run build
 COPY . ./
 EXPOSE 7000
-CMD ["serve", "-s", "public", "-l", "7000"]
-
-
+CMD ["npm", "run", "serve"]

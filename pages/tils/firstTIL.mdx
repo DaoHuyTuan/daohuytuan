@@ -1,0 +1,18 @@
+import { withRouter } from "next/router";
+import TilsPost from "../../components/layouts/tils-posts.js";
+
+export const meta = {
+  published: true,
+  publishedAt: "2018-05-18",
+  title: "Bye",
+  summary: "Bye is good bye",
+  image: "/static/site-feature.png"
+};
+
+export default withRouter(({ children, router }) => (
+  <TilsPost path={router.pathname} meta={meta}>
+    {children}
+  </TilsPost>
+));
+
+hello buildfdsfdsfsdv dsrfvcdsf
