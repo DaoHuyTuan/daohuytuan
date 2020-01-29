@@ -21,8 +21,9 @@ const Head = props => (
       rel="alternate"
       title="RSS Feed"
       type="application/json"
-      href={`${siteMeta.siteUrl}/feed.json`}
+      href={`${siteMeta.siteUrl}/feed.xml`}
     />
+    <link rel="icon" href="/static/favicon.ico" />
     <link rel="stylesheet" href="/static/styles/styles.css" type="text/css" />
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ""} />
@@ -32,10 +33,6 @@ const Head = props => (
     />
     <meta name="twitter:site" content={props.url || defaultOGURL} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:image"
-      content={`${siteMeta.siteUrl}${props.ogImage || defaultOGImage}`}
-    />
     <meta
       property="og:image"
       content={`${siteMeta.siteUrl}${props.ogImage || defaultOGImage}`}
