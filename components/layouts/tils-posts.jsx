@@ -12,7 +12,8 @@ function TilsPost({ path, meta, children }) {
   const nextPost = tils[currentPostIndex - 1];
 
   return (
-    <Layout pageTitle={meta.title} ogImage={meta.image}>
+    // <Layout pageTitle={meta.title} ogImage={meta.image}>
+    <>
       <SyntaxHighlight />
       <article className="h-entry">
         <header>
@@ -77,7 +78,8 @@ function TilsPost({ path, meta, children }) {
           grid-template-columns: 1fr 1fr;
         }
       `}</style>
-    </Layout>
+    </>
+    // </Layout>
   );
 }
 
