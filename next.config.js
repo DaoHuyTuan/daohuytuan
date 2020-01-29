@@ -8,6 +8,10 @@ module.exports = withImages({
     return config;
   }
 });
+const withCSS = require("@zeit/next-css");
+module.exports = withCSS({
+  /* config options here */
+});
 module.exports = withBundleAnalyzer({});
 
 const withMDX = require("@zeit/next-mdx")({

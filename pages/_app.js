@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { ThemeContext, ThemeControlProvider } from "../contexts/theme/reducer";
 import GlobalStyle from "../theme/globalStyle";
 import Layout from "../components/layouts/default";
+import HeadTag from "../components/head";
 
 class MyApp extends App {
   render() {
@@ -24,11 +25,13 @@ export const Roots = React.memo(props => {
   const { Components, pageProps } = props;
   return (
     <ThemeProvider theme={{ stateTheme }}>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <Layout>
         <Components {...pageProps}>
           <Html lang="en">
-            <Head />
+            <Head>
+              <link href="/static/styles/styles.css" type="text/css" />
+            </Head>
             <body>
               <Main />
               <NextScript />
