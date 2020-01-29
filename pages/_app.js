@@ -25,7 +25,6 @@ export const Roots = React.memo(props => {
   const { Components, pageProps } = props;
   return (
     <ThemeProvider theme={{ stateTheme }}>
-      {/* <GlobalStyle /> */}
       <Layout>
         <Components {...pageProps}>
           <Html lang="en">

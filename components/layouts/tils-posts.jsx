@@ -12,7 +12,6 @@ function TilsPost({ path, meta, children }) {
   const nextPost = tils[currentPostIndex - 1];
 
   return (
-    // <Layout pageTitle={meta.title} ogImage={meta.image}>
     <>
       <SyntaxHighlight />
       <article className="h-entry">
