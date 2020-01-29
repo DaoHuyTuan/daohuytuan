@@ -4,6 +4,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 import { ThemeProvider } from "styled-components";
 import { ThemeContext, ThemeControlProvider } from "../contexts/theme/reducer";
 import GlobalStyle from "../theme/globalStyle";
+import Layout from "../components/layouts/default";
 
 class MyApp extends App {
   render() {
@@ -24,15 +25,17 @@ export const Roots = React.memo(props => {
   return (
     <ThemeProvider theme={{ stateTheme }}>
       <GlobalStyle />
-      <Components {...pageProps}>
-        <Html lang="en">
-          <Head />
-          <body>
-            <Main />
-            <NextScript />
-          </body>
-        </Html>
-      </Components>
+      <Layout>
+        <Components {...pageProps}>
+          <Html lang="en">
+            <Head />
+            <body>
+              <Main />
+              <NextScript />
+            </body>
+          </Html>
+        </Components>
+      </Layout>
     </ThemeProvider>
   );
 });

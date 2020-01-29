@@ -1,8 +1,9 @@
-import Layout from './default'
+import Layout from "./default";
 
 function Page({ meta, children }) {
   return (
-    <Layout pageTitle={meta.title}>
+    // <Layout pageTitle={meta.title}>
+    <>
       <article>
         <header>
           <h1>{meta.title}</h1>
@@ -14,8 +15,9 @@ function Page({ meta, children }) {
           margin-bottom: 2em;
         }
       `}</style>
-    </Layout>
-  )
+    </>
+    // </Layout>
+  );
 }
 
-export default Page
+export default Page;

@@ -18,7 +18,8 @@ function BlogPost({ path, meta, children }) {
   const nextPost = posts[currentPostIndex - 1];
 
   return (
-    <Layout pageTitle={meta.title} ogImage={meta.image}>
+    // <Layout pageTitle={meta.title} ogImage={meta.image}>
+    <>
       <SyntaxHighlight />
       <BlogContent>
         <BlogContentTitle>{meta.title}</BlogContentTitle>
@@ -62,7 +63,8 @@ function BlogPost({ path, meta, children }) {
           )}
         </footer>
       </BlogContent>
-    </Layout>
+    </>
+    // </Layout>
   );
 }
 
