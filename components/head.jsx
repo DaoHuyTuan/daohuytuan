@@ -7,7 +7,7 @@ const defaultDescription = siteMeta.description;
 const defaultOGURL = siteMeta.siteUrl;
 const defaultOGImage = siteMeta.image;
 
-const HeadTag = props => (
+const Head = props => (
   <NextHead>
     <meta charSet="UTF-8" />
     <title>{props.title}</title>
@@ -23,7 +23,7 @@ const HeadTag = props => (
       type="application/json"
       href={`${siteMeta.siteUrl}/feed.json`}
     />
-    <link href="/static/styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/static/styles/styles.css" type="text/css" />
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ""} />
     <meta
@@ -45,11 +45,11 @@ const HeadTag = props => (
   </NextHead>
 );
 
-HeadTag.propTypes = {
+Head.propTypes = {
   title: string,
   description: string,
   url: string,
   ogImage: string
 };
 
-export default HeadTag;
+export default Head;

@@ -30,7 +30,7 @@ export const Roots = React.memo(props => {
         <Components {...pageProps}>
           <Html lang="en">
             <Head>
-              <link href="/static/styles/styles.css" type="text/css" />
+              <HeadTag />
             </Head>
             <body>
               <Main />
