@@ -15,6 +15,7 @@
     "@zeit/next-mdx": "^1.2.0",
     "babel-plugin-macros": "^2.5.0",
     "babel-plugin-preval": "^3.0.1",
+    "cacheable-response": "^1.10.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "cross-env": "^6.0.3",

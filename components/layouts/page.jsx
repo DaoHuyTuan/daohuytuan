@@ -2,7 +2,6 @@ import Layout from "./default";
 
 function Page({ meta, children }) {
   return (
-    // <Layout pageTitle={meta.title}>
     <>
       <article>
         <header>
@@ -16,7 +15,6 @@ function Page({ meta, children }) {
         }
       `}</style>
     </>
-    // </Layout>
   );
 }
 

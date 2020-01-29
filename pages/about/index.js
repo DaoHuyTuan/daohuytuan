@@ -1,8 +1,9 @@
 import React from "react";
 import Layout from "../../components/layouts/default";
 import Drawer from "../../components/containers/Drawer";
+import Container from "../../components/containers/Container";
 const About = React.memo(props => {
-  return <span>Hi This is About</span>;
+  return <Container>sfadf</Container>;
 });
 
 export default About;
