@@ -14,11 +14,9 @@ const handleTypeLabel = (type, themeData) => {
       color: ${theme.color}
       text-decoration: none;
       cursor: pointer;
-      transition: color 0.5s;
       &.drawer-active {
         color: ${COLOR_THEME}
         position: relative;
-        transition: color 0.5s;
         @media only screen and (min-width: ${SIZE.MD}px) {
           &:after {
             content: "";
