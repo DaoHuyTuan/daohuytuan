@@ -11,11 +11,9 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props;
     const { pathname } = router;
-    console.log(this.props)
     const title = pathname.replace(/(\/posts\/)/, "");
     
     const currentTitle = posts.filter(item => item.path === pathname);
-    console.log(currentTitle);
     return (
       <>
         <ThemeControlProvider>
@@ -28,7 +26,6 @@ class MyApp extends App {
 export const Roots = React.memo(props => {
   const { stateTheme } = useContext(ThemeContext);
   const { Components, pageProps, pageTitle } = props;
-  console.log(props)
   return (
     <ThemeProvider theme={{ stateTheme }}>
       <Layout pageTitle={pageTitle}>

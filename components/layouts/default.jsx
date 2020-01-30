@@ -5,7 +5,6 @@ const Head = dynamic(() => import("../head"));
 const Container = dynamic(() => import("../containers/Container"));
 
 const Layout = React.memo(({ path, children, pageTitle, ogImage }) => {
-  console.log(pageTitle)
   return (
     <Container>
       <Head title={pageTitle} ogImage={ogImage} />
