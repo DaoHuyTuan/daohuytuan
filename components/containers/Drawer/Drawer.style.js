@@ -6,7 +6,6 @@ const DrawerWrapper = styled.div`
   top: 0;
   left: 0;
   bottom: 0;
-  transition: 0.3s;
   z-index: 9999;
   &.drawer-open {
     width: 100%;
@@ -33,7 +32,6 @@ const DrawerContent = styled.div`
   top: 0;
   bottom: 0;
   transform: translate(-105%);
-  transition: 0.3s;
   box-shadow: 3px 0px 5px #bababa;
   &.drawer-open {
     transform: translate(0%);

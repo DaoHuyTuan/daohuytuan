@@ -28,7 +28,7 @@ export const Roots = React.memo(props => {
       <Layout>
         <Components {...pageProps}>
           <Html lang="en">
-            <Head>
+            <Head title="Dao Huy Tuan">
               <HeadTag />
             </Head>
             <body>
