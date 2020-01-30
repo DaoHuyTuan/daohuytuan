@@ -21,6 +21,7 @@ const Menu = React.memo(({ router }) => {
             href={item.url}
             key={item.id}
             type="link"
+            target="_blank"
           />
         ) : (
           <Link href={item.url} key={item.id}>

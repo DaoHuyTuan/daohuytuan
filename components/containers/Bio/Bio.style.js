@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { SIZE } from "../../../theme/variable";
+import { SIZE, FONT_THEME } from "../../../theme/variable";
+import { COLOR_THEME, BLACK_THEME } from "../../../theme/theme";
 const sizeAvatar = 200;
 const sizeBorderAvatar = 8;
 
@@ -66,9 +67,11 @@ const BioBody = styled.div`
   @media only screen and (max-width: ${SIZE.SM}px) {
     width: 100%;
     text-align: center;
+    padding-left: 0px;
   }
   @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
     width: calc(100% - ${sizeAvatar + sizeBorderAvatar - 50}px);
+
   }
 `;
 const BioTitle = styled.span`
@@ -81,4 +84,34 @@ const BioContent = styled.span`
   line-height: 2;
   word-break: break-word;
 `;
-export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent };
+const BioLink = styled.div`
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: ${SIZE.SM}px) {
+    justify-content: center;
+  }
+  & a {
+    font-size: 18px;
+    margin-right: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    color: ${BLACK_THEME};
+    font-family: monospace;
+    position: relative;
+    &:after {
+      content: "•";
+      position: absolute;
+      right: -20px;
+      color: ${BLACK_THEME};
+    }
+  }
+  & a:last-child {
+    &:after {
+      content: "";
+    }
+  }
+  & a:hover { 
+    color: ${COLOR_THEME};
+  }
+`
+export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent, BioLink };

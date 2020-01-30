@@ -16,6 +16,17 @@ export const menuList = [
     name: "Life",
     url: "/life",
     regex: /^(\/life)$/
+  },
+  {
+    id: 3,
+    name: "RSS",
+    url: "/static/feed.xml",
+    regex: /^(\/rss)$/
+  },
+  {
+    id: 4,
+    name: "App",
+    url: "https://app.daohuytuan.com"
   }
 ];
 export const handleActiveClass = (path, regex) => {
