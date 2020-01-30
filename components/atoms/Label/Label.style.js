@@ -25,7 +25,7 @@ const handleTypeLabel = (type, themeData) => {
             display: block;
             background-color: ${COLOR_THEME};
             position: absolute;
-            margin-top: 5px;
+            bottom: -4px;
           }
         }
       }`);
@@ -51,7 +51,7 @@ const handleTypeLabel = (type, themeData) => {
             display: block;
             background-color: ${COLOR_THEME};
             position: absolute;
-            margin-top: 20px;
+            bottom: 5px;
           }
         }
       }

@@ -10,7 +10,7 @@ const defaultOGImage = siteMeta.image;
 const Head = props => (
   <NextHead>
     <meta charSet="UTF-8" />
-    <title>{props.title}</title>
+    <title>{props.title || "Hy tứng's blogs"}</title>
     <meta
       name="description"
       content={props.description || defaultDescription}

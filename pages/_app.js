@@ -3,18 +3,21 @@ import React, { useContext } from "react";
 import { Html, Head, Main, NextScript } from "next/document";
 import { ThemeProvider } from "styled-components";
 import { ThemeContext, ThemeControlProvider } from "../contexts/theme/reducer";
-import GlobalStyle from "../theme/globalStyle";
 import Layout from "../components/layouts/default";
 import HeadTag from "../components/head";
-
+import {posts} from "../posts/index";
+import { withRouter } from "next/router";
 class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props;
-
+    const { Component, pageProps, router } = this.props;
+    const { pathname } = router;
+    const title = pathname.replace(/(\/posts\/)/, "");
+    
+    const currentTitle = posts.filter(item => item.path === pathname);
     return (
       <>
         <ThemeControlProvider>
-          <Roots Components={Component} pageProps={pageProps} />
+          <Roots Components={Component} pageProps={pageProps} pageTitle={currentTitle && currentTitle.length ? currentTitle[0].title : "Hy tứng's blogs"}/>
         </ThemeControlProvider>
       </>
     );
@@ -22,10 +25,10 @@ class MyApp extends App {
 }
 export const Roots = React.memo(props => {
   const { stateTheme } = useContext(ThemeContext);
-  const { Components, pageProps } = props;
+  const { Components, pageProps, pageTitle } = props;
   return (
     <ThemeProvider theme={{ stateTheme }}>
-      <Layout>
+      <Layout pageTitle={pageTitle}>
         <Components {...pageProps}>
           <Html lang="en">
             <Head title="Dao Huy Tuan">
@@ -41,4 +44,4 @@ export const Roots = React.memo(props => {
     </ThemeProvider>
   );
 });
-export default MyApp;
+export default withRouter(MyApp);

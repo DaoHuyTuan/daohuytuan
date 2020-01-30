@@ -22,20 +22,8 @@ function BlogPost({ path, meta, children }) {
       <SyntaxHighlight />
       <BlogContent>
         <BlogContentTitle>{meta.title}</BlogContentTitle>
-
         <div>
           <PublishedAt date={meta.publishedAt} link={path} />
-
-          {/* <Link href="/about">
-              <a
-                color="#aaa"
-                rel="author"
-                className="p-author h-card"
-                href="/about"
-              >
-                {siteMeta.author}
-              </a>
-            </Link> */}
         </div>
         <div className="e-content">{children}</div>
         <BlogEndLine />
