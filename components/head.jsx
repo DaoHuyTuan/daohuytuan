@@ -19,7 +19,7 @@ const Head = props => (
 
     <link
       rel="alternate"
-      title="RSS Feed"
+      title="rss feed"
       type="application/json"
       href={`${siteMeta.siteUrl}/feed.xml`}
     />

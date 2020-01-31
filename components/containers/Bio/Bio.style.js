@@ -77,7 +77,6 @@ const BioBody = styled.div`
 const BioTitle = styled.span`
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 24px;
 `;
 const BioContent = styled.span`
   font-size: 16px;
@@ -95,23 +94,24 @@ const BioLink = styled.div`
     margin-right: 30px;
     font-weight: 600;
     text-decoration: none;
-    color: ${BLACK_THEME};
+    color: ${COLOR_THEME};
     font-family: monospace;
     position: relative;
     &:after {
       content: "•";
       position: absolute;
       right: -20px;
-      color: ${BLACK_THEME};
+      color: ${COLOR_THEME};
     }
   }
   & a:last-child {
+    margin-right: 0;
     &:after {
       content: "";
     }
   }
   & a:hover { 
-    color: ${COLOR_THEME};
+    color: ${BLACK_THEME};
   }
 `
 export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent, BioLink };

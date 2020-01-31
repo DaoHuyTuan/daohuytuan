@@ -19,13 +19,13 @@ export const menuList = [
   },
   {
     id: 3,
-    name: "RSS",
+    name: "rss",
     url: "/static/feed.xml",
     regex: /^(\/rss)$/
   },
   {
     id: 4,
-    name: "App",
+    name: "app",
     url: "https://app.daohuytuan.com"
   }
 ];
