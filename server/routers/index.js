@@ -26,4 +26,8 @@ router.get("/uses", (req, res) => {
   const queryParams = getParam(req);
   req.app.render(req, res, "/uses", queryParams);
 });
+router.get("/life", (req, res) => {
+  const queryParams = getParam(req);
+  req.app.render(req, res, "/life", queryParams);
+});
 module.exports = router;
