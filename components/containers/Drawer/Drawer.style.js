@@ -27,12 +27,13 @@ const DrawerMask = styled.div`
 `;
 const DrawerContent = styled.div`
   width: 300px;
-  background-color: #ffffff;
+  background-color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.bg};
   position: fixed;
   top: 0;
   bottom: 0;
   transform: translate(-105%);
-  box-shadow: 3px 0px 5px #bababa;
+  ${props => props.theme.stateTheme && props.theme.stateTheme.light ? "box-shadow: 3px 0px 5px #bababa;" : "" };
+  
   &.drawer-open {
     transform: translate(0%);
     transition: 0.3s;

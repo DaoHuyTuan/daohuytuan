@@ -7,6 +7,7 @@ import Layout from "../components/layouts/default";
 import HeadTag from "../components/head";
 import {posts} from "../posts/index";
 import { withRouter } from "next/router";
+import GlobalStyle from "../theme/globalStyle";
 class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props;
@@ -28,8 +29,9 @@ export const Roots = React.memo(props => {
   const { Components, pageProps, pageTitle } = props;
   return (
     <ThemeProvider theme={{ stateTheme }}>
+      <GlobalStyle/>
       <Layout pageTitle={pageTitle}>
-        <Components {...pageProps}>
+        <Components {...pageProps} theme={{ ...stateTheme }}>
           <Html lang="en">
             <Head title="Dao Huy Tuan">
               <HeadTag />

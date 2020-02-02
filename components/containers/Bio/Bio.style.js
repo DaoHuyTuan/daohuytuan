@@ -95,14 +95,14 @@ const BioLink = styled.div`
     margin-right: 30px;
     font-weight: 600;
     text-decoration: none;
-    color: ${BLACK_THEME};
+    color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
     font-family: monospace;
     position: relative;
     &:after {
       content: "•";
       position: absolute;
       right: -20px;
-      color: ${BLACK_THEME};
+      color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
     }
   }
   & a:last-child {
@@ -111,7 +111,7 @@ const BioLink = styled.div`
     }
   }
   & a:hover { 
-    color: ${COLOR_THEME};
+    color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   }
 `
 export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent, BioLink };

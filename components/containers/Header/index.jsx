@@ -8,32 +8,35 @@ import Logo from "../../atoms/Logo";
 import Label from "../../atoms/Label";
 import IconSVG from "../../atoms/IconSVG";
 import HambugerMenu from "../../atoms/HambugerMenu";
-import searchIcon from "../../../public/static/icons/search.svg";
+import SVGComponent from "../../atoms/SVGComponent";
+import dayIcon from "../../../public/static/icons/sun.svg";
+import nightIcon from "../../../public/static/icons/night.svg";
 import closeIcon from "../../../public/static/icons/close.svg";
 import { HeaderWrapper } from "./Header.style";
-// import { ThemeContext } from "../../../contexts/theme/reducer";
+import { ThemeContext } from "../../../contexts/theme/reducer";
 import {
   MenuGroup,
   MenuWrapperMobile,
   MenuHeaderMobile
 } from "../Menu/Menu.style";
+import { BLACK_THEME } from "../../../theme/theme";
 const Header = React.memo(({ router }) => {
   const ref = React.createRef;
   const regex = "http";
   const [isOpen, setIsOpen] = useState(false);
-  // const { dispatch } = useContext(ThemeContext);
-  // const [theme, setTheme] = useState({ theme: false, content: nightIcon });
+  const { dispatch } = useContext(ThemeContext);
+  const [theme, setTheme] = useState({ light: false, content: nightIcon });
   const onToggleDrawer = useCallback(() => {
     setIsOpen(prevState => !prevState);
   });
-  // const onChangeTheme = useCallback(() => {
-  //   dispatch({ type: "TOGGLE" });
-  //   setTheme(prevState => ({
-  //     ...prevState,
-  //     theme: !prevState.theme,
-  //     content: !prevState.theme ? dayIcon : nightIcon
-  //   }));
-  // });
+  const onChangeTheme = useCallback(() => {
+    dispatch({ type: "TOGGLE" });
+    setTheme(prevState => ({
+      ...prevState,
+      light: !prevState.light,
+      content: !prevState.light ? dayIcon : nightIcon
+    }));
+  });
   const onHandleActiveClass = useCallback(regex => {
     const result = handleActiveClass(router.pathname, regex);
     return result;
@@ -46,9 +49,11 @@ const Header = React.memo(({ router }) => {
             <Link href="/">
               <Logo />
             </Link>
-            <IconSVG
-              content={closeIcon}
-              alt="close"
+            <SVGComponent
+              name="close"
+              width={24}
+              height={24}
+              fill={!theme.light ? BLACK_THEME : "#f9f9f9"}
               handleChange={onToggleDrawer}
             />
           </MenuHeaderMobile>
@@ -75,13 +80,13 @@ const Header = React.memo(({ router }) => {
           })}
         </MenuWrapperMobile>
       </Drawer>
-      <HambugerMenu onToggle={onToggleDrawer} />
+      <HambugerMenu onToggle={onToggleDrawer} theme={theme.light}/>
       <Link href="/">
         <Logo />
       </Link>
       <MenuGroup>
         <Menu />
-        <IconSVG content={searchIcon} alt="search" />
+        <IconSVG content={theme.content} alt="toggle theme" handleChange={onChangeTheme}/>
       </MenuGroup>
     </HeaderWrapper>
   );

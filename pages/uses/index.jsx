@@ -5,13 +5,14 @@ import Container from "../../components/containers/Container";
 import { BLACK_THEME } from "../../theme/theme";
 import usesImg from "../../public/static/images/uses.jpg";
 const Uses = React.memo(props => {
+  const { theme } = props;
   return (
     <Container clssName="uses">
       <Container clssName="container-uses">
         <LabelCustom
           fontWeight={900}
           fontSize="40px"
-          colors={BLACK_THEME}
+          colors={theme.theme.colorLink}
           marginBot="30px"
         >
           What i uses ?
@@ -19,7 +20,7 @@ const Uses = React.memo(props => {
         <img className="uses-image" src={usesImg} alt="uses" />
       </Container>
       <Container clssName="container-uses">
-        <LabelCustom fontWeight={600} fontSize="30px">
+        <LabelCustom fontWeight={600} fontSize="30px" colors={theme.theme.colorLink}>
           #Editor
           <ul>
             <li>
@@ -80,7 +81,7 @@ const Uses = React.memo(props => {
           </ul>
         </LabelCustom>
 
-        <LabelCustom fontWeight={600} fontSize="30px">
+        <LabelCustom fontWeight={600} fontSize="30px" colors={theme.theme.colorLink}>
           #Themes
           <ul>
             <li>
@@ -96,7 +97,7 @@ const Uses = React.memo(props => {
           </ul>
         </LabelCustom>
 
-        <LabelCustom fontWeight={600} fontSize="30px">
+        <LabelCustom fontWeight={600} fontSize="30px" colors={theme.theme.colorLink}> 
           #Software
           <ul>
             <li>
@@ -155,7 +156,7 @@ const Uses = React.memo(props => {
             </li>
           </ul>
         </LabelCustom>
-        <LabelCustom fontWeight={600} fontSize="30px">
+        <LabelCustom fontWeight={600} fontSize="30px" colors={theme.theme.colorLink}>
           #Hardware
           <ul>
             <li>Apple iMac 2017, 27 inch (16GB RAM, Macos Catalina)</li>

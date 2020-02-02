@@ -24,8 +24,6 @@ html {
 
 body {
     margin: 0;
-
-    transition: 0.5s;
 }
 
 /**
@@ -612,16 +610,4 @@ template {
         /* Modern Browsers */
         url('/static/fonts/Merriweather/Merriweather-BlackItalic.ttf') format('truetype'),
         /* Safari, Android, iOS */
-}
-
-/* respondsive */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font: 100%/1.75 Merriweather;
-    font-size: 15px;
-    font-family: "Montserrat";
-    color: #444343e6;
 }

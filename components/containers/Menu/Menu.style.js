@@ -17,7 +17,9 @@ const MenuHeaderMobile = styled.div`
   height: 80px;
   justify-content: space-between;
   padding: 0px 20px 0px 20px;
-  border-bottom: 1px solid #ddd;
+  
+  ${props => props.theme.stateTheme.light ? "border-bottom: 1px solid #ddd" : ""}
+  ${props => !props.theme.stateTheme.light && "background-color: #394254"  }
 `
 const MenuGroup = styled.div`
   display: flex;
