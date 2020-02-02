@@ -28,14 +28,14 @@ const ContainerWrapper = styled.div`
     & li {
       margin-bottom: 24px;
       font-size: 18px;
-      color: ${BLACK_THEME};
+      color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
       & a:first-child {
         font-size: 24px;
         font-weight: 600;
-        color: ${BLACK_THEME};
+        color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
       }
       & a {
-        color: ${COLOR_THEME};
+        color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
         font-weight: 400;
       }
     }

@@ -16,12 +16,12 @@ const BlogItem = styled.div`
 const BlogItemTitle = styled.span`
   font-size: 29px;
   font-weight: 900;
-  color: ${COLOR_THEME};
+  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   text-decoration: none;
   cursor: pointer;
 `;
 const BlogLabel = styled.span`
-  color: ${BLACK_THEME};
+  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
   font-size: 1.2rem;
   font-weight: 600;
   display: inline-block;
@@ -32,14 +32,14 @@ const BlogLabel = styled.span`
     width: 150%;
     display: block;
     height: 2px;
-    background-color: ${BLACK_THEME};
+    background-color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
     position: absolute;
     bottom: -5px;
   }
 `;
 const ArrowBlog = styled.span`
   text-decoration: none;
-  color: ${COLOR_THEME};
+  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   position: relative;
   cursor: pointer;
   &:after {
@@ -48,8 +48,10 @@ const ArrowBlog = styled.span`
     width: 100%;
     height: 2px;
     display: block;
-    background-color: ${COLOR_THEME};
+    background-color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   }
 `;
-
-export { BlogContainer, BlogLabel, BlogItem, BlogItemTitle, ArrowBlog };
+const DateCreated = styled.span`
+  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
+`
+export { BlogContainer, BlogLabel, BlogItem, BlogItemTitle, ArrowBlog, DateCreated };
