@@ -30,4 +30,8 @@ router.get("/cv", (req, res) => {
   const queryParams = getParam(req);
   req.app.render(req, res, "/cv", queryParams);
 });
+router.get("/friends", (req, res) => {
+  const queryParams = getParam(req);
+  req.app.render(req, res, "/friends", queryParams);
+});
 module.exports = router;

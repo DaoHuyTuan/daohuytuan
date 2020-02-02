@@ -21,8 +21,8 @@ const Bio = React.memo(props => {
         <BioBody>
           <BioTitle>Hey! I’m tuan</BioTitle>
           <BioLink>
-            <a href="https://github.com/DaoHuyTuan" target="_blank">Github</a>
-            <a href="https://twitter.com/tuandaohuy" target="_blank">Twitter</a>
+            <Link href="/friends"><a>Friends</a></Link>
+            <Link href="/uses"><a>Uses</a></Link>
           </BioLink>
           <BioContent>
             From Viet Nam with love, a vimmer and a fan of emacs but i usually use vscode for work 😋, my hobby is customize anything i love, or build something from scratch 🔥🔥🔥🔥🔥.<br />
