@@ -17,14 +17,14 @@ export const menuList = [
     url: "/about",
     regex: /^(\/about)$/
   },
+  // {
+  //   id: 3,
+  //   name: "rss",
+  //   url: "/static/feed.xml",
+  //   regex: /^(\/rss)$/
+  // },
   {
     id: 3,
-    name: "rss",
-    url: "/static/feed.xml",
-    regex: /^(\/rss)$/
-  },
-  {
-    id: 4,
     name: "app",
     url: "https://app.daohuytuan.com"
   }

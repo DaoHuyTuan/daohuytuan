@@ -114,4 +114,15 @@ const BioLink = styled.div`
     color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   }
 `
-export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent, BioLink };
+const BioSocial = styled.div`
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+  @media only screen and (max-width: ${SIZE.SM}px) {
+    justify-content: center;
+  }
+  & a {
+    margin-right: 20px;
+  }
+`
+export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent, BioLink, BioSocial };

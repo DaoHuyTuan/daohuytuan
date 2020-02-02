@@ -16,7 +16,7 @@ import {
   BlogContainer,
   BlogLabel
 } from "../components/blogs-components/blog.style";
-const Blog = React.memo(({ router, page = 1, tills }) => {
+const Blog = React.memo(({ router, page = 1, tills, theme }) => {
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
     current: page,
@@ -33,7 +33,7 @@ const Blog = React.memo(({ router, page = 1, tills }) => {
   const results = _range(fromResult - 1, toResult);
   return (
     <>
-      <Bio />
+      <Bio theme={theme}/>
       {/* <CardTILContainer>
         {
           <Carousel
