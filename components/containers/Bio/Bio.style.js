@@ -77,7 +77,6 @@ const BioBody = styled.div`
 const BioTitle = styled.span`
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 24px;
 `;
 const BioContent = styled.span`
   font-size: 16px;
@@ -106,6 +105,7 @@ const BioLink = styled.div`
     }
   }
   & a:last-child {
+    margin-right: 0;
     &:after {
       content: "";
     }
