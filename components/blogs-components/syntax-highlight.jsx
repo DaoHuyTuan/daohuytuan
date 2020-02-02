@@ -59,7 +59,8 @@ export default () => (
 
       :not(pre) > code[class*="language-"],
       pre[class*="language-"] {
-        background: #282c34;
+        background: #1e1e1e;
+        border-radius: 20px;
       }
 
       /* Inline code */
@@ -188,10 +189,18 @@ export default () => (
         border-left: 0.25em solid #ffdc00;
       }
       code {
-        background-color: #282c34;
+        background-color: #1e1e1e;
         padding: 5px 10px;
         color: #abb2bf;
-        line-height: 3rem;
+        line-height: 1.5;
+        display: inline-block;
+      }
+      .e-content p {
+        line-height: 3;
+        margin: 0px;
+      }
+      .e-content a {
+        color: #ffb7b7;
       }
     `}
   </style>

@@ -1,30 +1,30 @@
 export const menuList = [
   {
     id: 0,
-    name: "Blogs",
+    name: "blogs",
     url: "/",
     regex: /^(\/|\/posts.*)$/
   },
   {
     id: 1,
-    name: "About",
-    url: "/about",
-    regex: /^(\/about)$/
+    name: "cv",
+    url: "/cv",
+    regex: /^(\/cv)$/
   },
   {
     id: 2,
-    name: "Life",
-    url: "/life",
-    regex: /^(\/life)$/
+    name: "about",
+    url: "/about",
+    regex: /^(\/about)$/
   },
+  // {
+  //   id: 3,
+  //   name: "rss",
+  //   url: "/static/feed.xml",
+  //   regex: /^(\/rss)$/
+  // },
   {
     id: 3,
-    name: "rss",
-    url: "/static/feed.xml",
-    regex: /^(\/rss)$/
-  },
-  {
-    id: 4,
     name: "app",
     url: "https://app.daohuytuan.com"
   }

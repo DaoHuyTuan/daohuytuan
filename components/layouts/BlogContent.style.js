@@ -17,7 +17,7 @@ const BlogContentTitle = styled.span`
   font-size: 50px;
   font-weight: 900;
   font-family: ${FONT_THEME};
-  color: ${COLOR_THEME};
+  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
 `;
 const PostPagination = styled.div`
   display: flex;

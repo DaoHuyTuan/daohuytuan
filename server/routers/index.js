@@ -26,8 +26,12 @@ router.get("/uses", (req, res) => {
   const queryParams = getParam(req);
   req.app.render(req, res, "/uses", queryParams);
 });
-router.get("/life", (req, res) => {
+router.get("/cv", (req, res) => {
   const queryParams = getParam(req);
-  req.app.render(req, res, "/life", queryParams);
+  req.app.render(req, res, "/cv", queryParams);
+});
+router.get("/friends", (req, res) => {
+  const queryParams = getParam(req);
+  req.app.render(req, res, "/friends", queryParams);
 });
 module.exports = router;
