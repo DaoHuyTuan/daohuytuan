@@ -1,8 +1,6 @@
 import React from "react";
-import Layout from "../../components/layouts/default";
-import { LabelCustom } from "../../components/atoms/Label/Label.style";
-import Container from "../../components/containers/Container";
-import { BLACK_THEME } from "../../theme/theme";
+import { LabelCustom } from "Atoms/Label/Label.style";
+import Container from "Containers/Container"
 import usesImg from "../../public/static/images/uses.jpg";
 const Uses = React.memo(props => {
   const { theme } = props;

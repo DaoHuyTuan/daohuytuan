@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../../components/layouts/default";
-import Drawer from "../../components/containers/Drawer";
-import Container from "../../components/containers/Container";
+import Layout from "Components/layouts/default";
+import Drawer from "Containers/Drawer";
+import Container from "Containers/Container";
 const About = React.memo(props => {
   return <Container>zewrsfgvuoerhs</Container>;
 });

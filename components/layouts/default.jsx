@@ -1,8 +1,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
-const Header = dynamic(() => import("../containers/Header"));
+const Header = dynamic(() => import("Containers/Header"));
 const Head = dynamic(() => import("../head"));
-const Container = dynamic(() => import("../containers/Container"));
+const Container = dynamic(() => import("Containers/Container"));
 
 const Layout = React.memo(({ path, children, pageTitle, ogImage }) => {
   return (

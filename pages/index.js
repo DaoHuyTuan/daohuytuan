@@ -3,19 +3,18 @@ import { withRouter } from "next/router";
 import _range from "lodash/range";
 import Link from "next/link";
 import pagination from "pagination";
-import Layout from "../components/layouts/default";
-import Post from "../components/blogs-components/blog-index-item";
+import Post from "Components/blogs-components/blog-index-item";
 import { posts, tils } from "../posts/index";
 import { siteMeta } from "../blog.config";
-import Bio from "../components/containers/Bio";
-import CardTIL from "../components/containers/CardTIL";
-import { CardTILContainer } from "../components/containers/CardTIL/CardTIL.style";
+import Bio from "Containers/Bio";
+import CardTIL from "Containers/CardTIL";
+import { CardTILContainer } from "Containers/CardTIL/CardTIL.style";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {
   BlogContainer,
   BlogLabel
-} from "../components/blogs-components/blog.style";
+} from "Components/blogs-components/blog.style";
 const Blog = React.memo(({ router, page = 1, tills, theme }) => {
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
