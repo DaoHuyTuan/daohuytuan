@@ -1,3 +1,4 @@
+const path = require('path')
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true"
 });
@@ -21,6 +22,7 @@ const withMDX = require("@zeit/next-mdx")({
   }
 });
 
+
 module.exports = withMDX({
   target: "serverless",
   pageExtensions: ["js", "jsx", "mdx", "md"],
@@ -30,7 +32,11 @@ module.exports = withMDX({
       fs: "empty",
       module: "empty"
     };
-
+    config.resolve.alias = Object.assign({}, config.resolve.alias, {
+      Components: path.resolve("./components"),
+      Atoms: path.resolve("./components/atoms"),
+      Containers: path.resolve("./components/containers")
+    });
     config.module.rules.push(
       {
         test: /\.css$/,

@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../../components/containers/Container";
+import Container from "Containers/Container";
 const Friends = React.memo(props => {
   return <Container>this is Friends</Container>;
 });

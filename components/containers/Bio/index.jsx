@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../Container";
 import Link from "next/link";
-import SVGComponent from "../../atoms/SVGComponent";
+import SVGComponent from "Atoms/SVGComponent";
 import {
   BioWrapper,
   Avatar,

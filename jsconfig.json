@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "jsx": "react",
+      "baseUrl": ".",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "paths": {
+        "*": [
+            "*",
+            "Components/*",
+            "Atoms/*",
+            "Containers/"
+          ]
+      }
+    },
+    "exclude": ["node_modules", ".next"]
+  }
