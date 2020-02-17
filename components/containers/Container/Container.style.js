@@ -16,6 +16,12 @@ const ContainerWrapper = styled.div`
     max-width: 940px;
     margin: 0 auto;
   }
+  &.cv-page {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    display: flex;
+  }
   &.container-uses {
     padding: 30px 30px 0px 30px;
     display: flex;
