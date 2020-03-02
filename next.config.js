@@ -35,7 +35,8 @@ module.exports = withMDX({
     config.resolve.alias = Object.assign({}, config.resolve.alias, {
       Components: path.resolve("./components"),
       Atoms: path.resolve("./components/atoms"),
-      Containers: path.resolve("./components/containers")
+      Containers: path.resolve("./components/containers"),
+      Theme: path.resolve("./theme/")
     });
     config.module.rules.push(
       {

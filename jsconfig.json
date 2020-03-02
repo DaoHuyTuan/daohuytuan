@@ -10,7 +10,8 @@
             "*",
             "Components/*",
             "Atoms/*",
-            "Containers/"
+            "Containers/*",
+            "Theme/*"
           ]
       }
     },
