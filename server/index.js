@@ -47,12 +47,12 @@ async function bootstrap() {
     server.get("*", (req, res) => handle(req, res));
 
     if (dev) {
-      server.listen(3002, err => {
+      server.listen(3002, (err) => {
         if (err) throw err;
         console.log("> Ready on http://localhost:3002");
       });
     } else {
-      server.listen(7000, err => {
+      server.listen(7000, (err) => {
         if (err) throw err;
         console.log("> Ready on http://localhost:7000");
       });
@@ -78,7 +78,7 @@ async function bootstrap() {
   // });
 }
 
-bootstrap().catch(ex => {
+bootstrap().catch((ex) => {
   console.error(ex.stack);
   process.exit(1);
 });

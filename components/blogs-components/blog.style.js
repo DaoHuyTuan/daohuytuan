@@ -16,12 +16,14 @@ const BlogItem = styled.div`
 const BlogItemTitle = styled.span`
   font-size: 29px;
   font-weight: 900;
-  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
+  color: ${(props) =>
+    props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   text-decoration: none;
   cursor: pointer;
 `;
 const BlogLabel = styled.span`
-  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
+  color: ${(props) =>
+    props.theme.stateTheme && props.theme.stateTheme.theme.color};
   font-size: 1.2rem;
   font-weight: 600;
   display: inline-block;
@@ -32,14 +34,16 @@ const BlogLabel = styled.span`
     width: 150%;
     display: block;
     height: 2px;
-    background-color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
+    background-color: ${(props) =>
+      props.theme.stateTheme && props.theme.stateTheme.theme.color};
     position: absolute;
     bottom: -5px;
   }
 `;
 const ArrowBlog = styled.span`
   text-decoration: none;
-  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
+  color: ${(props) =>
+    props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   position: relative;
   cursor: pointer;
   &:after {
@@ -48,14 +52,34 @@ const ArrowBlog = styled.span`
     width: 100%;
     height: 2px;
     display: block;
-    background-color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
+    background-color: ${(props) =>
+      props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   }
 `;
 const DateCreated = styled.span`
-  color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
-`
+  color: ${(props) =>
+    props.theme.stateTheme && props.theme.stateTheme.theme.color};
+`;
 const CommentWrapper = styled.div`
   display: flex;
-  background-color: red;
-`
-export { BlogContainer, BlogLabel, BlogItem, BlogItemTitle, ArrowBlog, DateCreated, CommentWrapper };
+  flex-flow: column;
+`;
+
+const CommentBreak = styled.hr`
+  width: 96%;
+  height: 1px;
+  background-color: #0003;
+  margin-bottom: 30px;
+  border: none;
+`;
+
+export {
+  BlogContainer,
+  BlogLabel,
+  BlogItem,
+  BlogItemTitle,
+  ArrowBlog,
+  DateCreated,
+  CommentWrapper,
+  CommentBreak
+};

@@ -11,8 +11,8 @@ import {
   BlogEndLine,
   PostPagination
 } from "./BlogContent.style";
-import CommentContainer from "../blogs-components/Comments/CommentContainer";
-
+import Comments from "../blogs-components/Comments";
+import { fakeComments } from "./fake-comments";
 function BlogPost({ path, meta, children }) {
   const currentPostIndex = posts.map(({ title }) => title).indexOf(meta.title);
   const previousPost = posts[currentPostIndex + 1];
@@ -28,7 +28,7 @@ function BlogPost({ path, meta, children }) {
         </div>
         <div className="e-content">{children}</div>
         <BlogEndLine />
-        <CommentContainer />
+        <Comments list={fakeComments} />
         <footer>
           {(previousPost || nextPost) && (
             <PostPagination>

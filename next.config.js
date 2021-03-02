@@ -1,6 +1,7 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true"
 });
+
 const withImages = require("next-images");
 module.exports = withImages({
   inlineImageLimit: 16384,
@@ -10,7 +11,32 @@ module.exports = withImages({
 });
 const withCSS = require("@zeit/next-css");
 module.exports = withCSS({
-  /* config options here */
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+      use: {
+        loader: "url-loader",
+        options: {
+          limit: 100000
+        }
+      }
+    }),
+      config.plugins.push(
+        new MonacoWebpackPlugin({
+          // Add languages as needed...
+          languages: ["javascript", "typescript"],
+          filename: "static/[name].worker.js"
+        })
+      );
+    config.module.rules.push({
+      test: /\.worker\.js$/,
+      use: {
+        loader: "worker-loader",
+        options: { inline: true }
+      }
+    });
+    return config;
+  }
 });
 module.exports = withBundleAnalyzer({});
 
