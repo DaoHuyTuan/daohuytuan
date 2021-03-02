@@ -54,4 +54,8 @@ const ArrowBlog = styled.span`
 const DateCreated = styled.span`
   color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
 `
-export { BlogContainer, BlogLabel, BlogItem, BlogItemTitle, ArrowBlog, DateCreated };
+const CommentWrapper = styled.div`
+  display: flex;
+  background-color: red;
+`
+export { BlogContainer, BlogLabel, BlogItem, BlogItemTitle, ArrowBlog, DateCreated, CommentWrapper };

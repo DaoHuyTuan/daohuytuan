@@ -5,8 +5,8 @@ COPY . ./
 RUN rm -rf node_modules
 RUN npm install
 RUN npm run clean
-RUN npm run build:rss
 RUN npm run build
+RUN npm run build:rss
 COPY . ./
 EXPOSE 7000
 CMD ["npm", "run", "serve"]

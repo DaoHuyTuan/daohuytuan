@@ -29,7 +29,7 @@ const Bio = React.memo(props => {
           </BioLink>
           <BioContent>
             From Viet Nam with love, a vimmer and a fan of emacs but i usually use vscode for work 😋, my hobby is customize anything i love, or build something from scratch 🔥🔥🔥🔥🔥.<br />
-            I am currently working for a outsourcing technology company at HCM city
+            I am currently working for a <a href="https://www.hydrax.io" target="_blank">HydraX.io</a> at HCM city
           </BioContent>
           <BioSocial>
             <a href="https://www.facebook.com/ppdusv" target="_blank"><SVGComponent name="fb" width={24} height={24} fill={props.theme.light ? BLACK_THEME : "#f9f9f9"} /></a>
