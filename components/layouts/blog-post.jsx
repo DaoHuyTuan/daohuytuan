@@ -11,6 +11,7 @@ import {
   BlogEndLine,
   PostPagination
 } from "./BlogContent.style";
+import CommentContainer from "../blogs-components/Comments/CommentContainer";
 
 function BlogPost({ path, meta, children }) {
   const currentPostIndex = posts.map(({ title }) => title).indexOf(meta.title);
@@ -27,6 +28,7 @@ function BlogPost({ path, meta, children }) {
         </div>
         <div className="e-content">{children}</div>
         <BlogEndLine />
+        <CommentContainer />
         <footer>
           {(previousPost || nextPost) && (
             <PostPagination>
