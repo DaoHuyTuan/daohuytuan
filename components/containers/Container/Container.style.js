@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { SIZE } from "../../../theme/variable";
-import { COLOR_THEME, BLACK_THEME } from "../../../theme/theme";
+import styled from 'styled-components'
+import { SIZE } from '../../../theme/variable'
+import { COLOR_THEME, BLACK_THEME } from '../../../theme/theme'
 
 const ContainerWrapper = styled.div`
   &.bio {
@@ -43,6 +43,6 @@ const ContainerWrapper = styled.div`
       padding: 60px 0px 60px 0px;
     }
   }
-`;
+`
 
-export { ContainerWrapper };
+export { ContainerWrapper }

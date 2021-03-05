@@ -3,9 +3,7 @@ const path = require('path')
 
 const DIR = path.join(process.cwd(), '/pages/posts/')
 const META = /export\s+const\s+meta\s+=\s+({[\s\S]*?\n})/
-const files = fs
-  .readdirSync(DIR)
-  .filter(file => file.endsWith('.md') || file.endsWith('.mdx'))
+const files = fs.readdirSync(DIR).filter(file => file.endsWith('.md') || file.endsWith('.mdx'))
 
 module.exports = files
   .map((file, index) => {
@@ -23,7 +21,7 @@ module.exports = files
     return {
       ...meta,
       path: '/posts/' + file.replace(/\.mdx?$/, ''),
-      index,
+      index
     }
   })
   .filter(meta => meta.published)

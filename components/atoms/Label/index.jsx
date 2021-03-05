@@ -1,10 +1,10 @@
-import React from "react";
-import { LabelWrapper } from "./Label.style";
+import React from 'react'
+import { LabelWrapper } from './Label.style'
 const Label = React.forwardRef(
   ({ label, onClick, href, type, activeClass, clssName, target }, ref) => {
-    const classNames = [clssName ? clssName : ""];
+    const classNames = [clssName ? clssName : '']
     if (activeClass) {
-      classNames.push(activeClass);
+      classNames.push(activeClass)
     }
     return (
       <LabelWrapper
@@ -12,12 +12,11 @@ const Label = React.forwardRef(
         ref={ref}
         onClick={onClick}
         type={type}
-        className={classNames ? classNames.join(" ") : ""}
-        target={target}
-      >
+        className={classNames ? classNames.join(' ') : ''}
+        target={target}>
         {label}
       </LabelWrapper>
-    );
+    )
   }
-);
-export default Label;
+)
+export default Label

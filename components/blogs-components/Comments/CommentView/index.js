@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   CommentContainer,
   CommentViewWrapper,
@@ -6,8 +6,8 @@ import {
   CommentContent,
   AvatarBorder,
   CommentAvatar
-} from "./styles";
-import avatar from "../../../../public/static/images/avatar.svg";
+} from './styles'
+import avatar from '../../../../public/static/images/avatar.svg'
 
 const CommentView = React.memo(({ contents, user }) => {
   return (
@@ -20,7 +20,7 @@ const CommentView = React.memo(({ contents, user }) => {
         <CommentContent>{contents}</CommentContent>
       </CommentViewWrapper>
     </CommentContainer>
-  );
-});
+  )
+})
 
-export default CommentView;
+export default CommentView

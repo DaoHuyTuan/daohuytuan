@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const DrawerWrapper = styled.div`
   position: fixed;
@@ -11,7 +11,7 @@ const DrawerWrapper = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
+`
 const DrawerMask = styled.div`
   position: fixed;
   background-color: rgba(0, 0, 0, 0.7);
@@ -24,7 +24,7 @@ const DrawerMask = styled.div`
     opacity: 0.3;
     height: 100%;
   }
-`;
+`
 const DrawerContent = styled.div`
   width: 300px;
   background-color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.bg};
@@ -32,11 +32,14 @@ const DrawerContent = styled.div`
   top: 0;
   bottom: 0;
   transform: translate(-105%);
-  ${props => props.theme.stateTheme && props.theme.stateTheme.light ? "box-shadow: 3px 0px 5px #bababa;" : "" };
-  
+  ${props =>
+    props.theme.stateTheme && props.theme.stateTheme.light
+      ? 'box-shadow: 3px 0px 5px #bababa;'
+      : ''};
+
   &.drawer-open {
     transform: translate(0%);
     transition: 0.3s;
   }
-`;
-export { DrawerWrapper, DrawerMask, DrawerContent };
+`
+export { DrawerWrapper, DrawerMask, DrawerContent }

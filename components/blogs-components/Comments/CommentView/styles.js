@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const CommentContainer = styled.div`
   display: flex;
   flex-flow: row;
   align-items: center;
   margin-bottom: 20px;
-`;
+`
 const CommentViewWrapper = styled.div`
   display: flex;
   flex-flow: column;
@@ -15,23 +15,23 @@ const CommentViewWrapper = styled.div`
   padding: 10px;
   border-radius: 5px;
   background-color: #f7f7f7;
-`;
+`
 const CommentName = styled.span`
   font-size: 1.2rem;
   font-weight: 600;
-`;
+`
 
 const CommentContent = styled.span`
   font-size: 1rem;
-`;
+`
 
-const CommentTime = styled.span``;
+const CommentTime = styled.span``
 
 const CommentAvatar = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-`;
+`
 
 const AvatarBorder = styled.div`
   width: 50px;
@@ -42,7 +42,7 @@ const AvatarBorder = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 15px;
-`;
+`
 
 export {
   CommentContainer,
@@ -52,4 +52,4 @@ export {
   CommentTime,
   CommentAvatar,
   AvatarBorder
-};
+}

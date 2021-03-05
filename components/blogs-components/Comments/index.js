@@ -1,14 +1,14 @@
-import React from "react";
-import { CommentWrapper, CommentBreak } from "../blog.style";
-import CommentCreate from "./CommentCreate";
-import CommentView from "./CommentView";
+import React from 'react'
+import { CommentWrapper, CommentBreak } from '../blog.style'
+import CommentCreate from './CommentCreate'
+import CommentView from './CommentView'
 
 const Comments = React.memo(({ list }) => {
   return (
     <>
       <CommentWrapper>
-        {list.map((item) => {
-          return <CommentView key={item.id} {...item} />;
+        {list.map(item => {
+          return <CommentView key={item.id} {...item} />
         })}
       </CommentWrapper>
       <CommentCreate />
@@ -16,7 +16,7 @@ const Comments = React.memo(({ list }) => {
       <CommentBreak />
       <div></div>
     </>
-  );
-});
+  )
+})
 
-export default Comments;
+export default Comments

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-const CommentCreateWrapper = styled.div`
+const EditorWrapper = styled.div`
   height: ${props => props.height};
   position: relative;
 `
 
-export { CommentCreateWrapper }
+export { EditorWrapper }

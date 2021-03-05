@@ -1,16 +1,16 @@
-import React, { useCallback } from "react";
-import { MenuWrapper } from "./Menu.style";
-import Label from "../../atoms/Label";
-import { menuList, handleActiveClass } from "./menu";
-import Link from "next/link";
-import { withRouter } from "next/router";
+import React, { useCallback } from 'react'
+import { MenuWrapper } from './Menu.style'
+import Label from '../../atoms/Label'
+import { menuList, handleActiveClass } from './menu'
+import Link from 'next/link'
+import { withRouter } from 'next/router'
 const Menu = React.memo(({ router }) => {
-  const ref = React.createRef;
-  const regex = "http";
+  const ref = React.createRef
+  const regex = 'http'
   const onHandleActiveClass = useCallback(regex => {
-    const result = handleActiveClass(router.pathname, regex);
-    return result;
-  });
+    const result = handleActiveClass(router.pathname, regex)
+    return result
+  })
   return (
     <MenuWrapper>
       {menuList.map(item => {
@@ -20,21 +20,21 @@ const Menu = React.memo(({ router }) => {
             label={item.name}
             href={item.url}
             key={item.id}
-            type="link"
-            target="_blank"
+            type='link'
+            target='_blank'
           />
         ) : (
           <Link href={item.url} key={item.id}>
             <Label
               ref={ref}
               label={item.name}
-              type="link"
+              type='link'
               activeClass={onHandleActiveClass(item.regex)}
             />
           </Link>
-        );
+        )
       })}
     </MenuWrapper>
-  );
-});
-export default withRouter(Menu);
+  )
+})
+export default withRouter(Menu)

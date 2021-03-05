@@ -1,17 +1,15 @@
-import React from "react";
-import Link from "next/link";
-import { parse, format } from "date-fns";
-import { DateCreated } from "./blog.style";
+import React from 'react'
+import Link from 'next/link'
+import { parse, format } from 'date-fns'
+import { DateCreated } from './blog.style'
 
 function PublishedAt(props) {
-  const { link, date } = props;
+  const { link, date } = props
   return (
     <>
       <Link href={link}>
-        <a href={link} className="u-url" mcolor="#aaa" {...props}>
-          <DateCreated>
-            {format(parse(date), "MMMM DD, YYYY")}
-          </DateCreated>
+        <a href={link} className='u-url' mcolor='#aaa' {...props}>
+          <DateCreated>{format(parse(date), 'MMMM DD, YYYY')}</DateCreated>
         </a>
       </Link>
       <style jsx>{`
@@ -24,7 +22,7 @@ function PublishedAt(props) {
         }
       `}</style>
     </>
-  );
+  )
 }
 
-export default PublishedAt;
+export default PublishedAt

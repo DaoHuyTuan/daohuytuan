@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { SIZE, FONT_THEME } from "../../../theme/variable";
-import { COLOR_THEME, BLACK_THEME } from "../../../theme/theme";
-const sizeAvatar = 200;
-const sizeBorderAvatar = 8;
+import styled from 'styled-components'
+import { SIZE, FONT_THEME } from '../../../theme/variable'
+import { COLOR_THEME, BLACK_THEME } from '../../../theme/theme'
+const sizeAvatar = 200
+const sizeBorderAvatar = 8
 
 const BioWrapper = styled.div`
   width: 940px;
@@ -17,7 +17,7 @@ const BioWrapper = styled.div`
   @media only screen and (min-width: ${SIZE.SM}px) {
     flex-flow: row;
   }
-`;
+`
 const Avatar = styled.img`
   width: ${sizeAvatar}px;
   height: ${sizeAvatar}px;
@@ -27,7 +27,7 @@ const Avatar = styled.img`
     width: ${sizeAvatar - 50}px;
     height: ${sizeAvatar - 50}px;
   }
-`;
+`
 const AvatarBorder = styled.div`
   cursor: pointer;
   background-image: linear-gradient(
@@ -58,7 +58,7 @@ const AvatarBorder = styled.div`
     height: ${sizeAvatar + sizeBorderAvatar - 50}px;
     margin-bottom: 24px;
   }
-`;
+`
 const BioBody = styled.div`
   display: flex;
   width: calc(100% - ${sizeAvatar + sizeBorderAvatar}px);
@@ -71,18 +71,17 @@ const BioBody = styled.div`
   }
   @media only screen and (min-width: ${SIZE.SM}px) and (max-width: ${SIZE.MD}px) {
     width: calc(100% - ${sizeAvatar + sizeBorderAvatar - 50}px);
-
   }
-`;
+`
 const BioTitle = styled.span`
   font-size: 30px;
   font-weight: bold;
-`;
+`
 const BioContent = styled.span`
   font-size: 16px;
   line-height: 2;
   word-break: break-word;
-`;
+`
 const BioLink = styled.div`
   display: flex;
   align-items: center;
@@ -98,7 +97,7 @@ const BioLink = styled.div`
     font-family: monospace;
     position: relative;
     &:after {
-      content: "•";
+      content: '•';
       position: absolute;
       right: -20px;
       color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.color};
@@ -107,10 +106,10 @@ const BioLink = styled.div`
   & a:last-child {
     margin-right: 0;
     &:after {
-      content: "";
+      content: '';
     }
   }
-  & a:hover { 
+  & a:hover {
     color: ${props => props.theme.stateTheme && props.theme.stateTheme.theme.colorLink};
   }
 `
@@ -125,4 +124,4 @@ const BioSocial = styled.div`
     margin-right: 20px;
   }
 `
-export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent, BioLink, BioSocial };
+export { BioWrapper, Avatar, AvatarBorder, BioBody, BioTitle, BioContent, BioLink, BioSocial }

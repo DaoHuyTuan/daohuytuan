@@ -1,55 +1,46 @@
-import Link from "next/link";
-import { siteMeta } from "../../blog.config";
-import Layout from "./default";
-import SyntaxHighlight from "../blogs-components/syntax-highlight";
-import PublishedAt from "../blogs-components/published-at";
-import { tils } from "../../posts/index";
-import NextPrevPost from "../blogs-components/next-prev-post";
+import Link from 'next/link'
+import { siteMeta } from '../../blog.config'
+import Layout from './default'
+import SyntaxHighlight from '../blogs-components/syntax-highlight'
+import PublishedAt from '../blogs-components/published-at'
+import { tils } from '../../posts/index'
+import NextPrevPost from '../blogs-components/next-prev-post'
 
 function TilsPost({ path, meta, children }) {
-  const currentPostIndex = tils.map(({ title }) => title).indexOf(meta.title);
-  const previousPost = tils[currentPostIndex + 1];
-  const nextPost = tils[currentPostIndex - 1];
+  const currentPostIndex = tils.map(({ title }) => title).indexOf(meta.title)
+  const previousPost = tils[currentPostIndex + 1]
+  const nextPost = tils[currentPostIndex - 1]
 
   return (
     <>
       <SyntaxHighlight />
-      <article className="h-entry">
+      <article className='h-entry'>
         <header>
-          <h1 className="p-name">{meta.title}</h1>
+          <h1 className='p-name'>{meta.title}</h1>
 
           <div>
             <PublishedAt date={meta.publishedAt} link={path} />
 
-            <Link href="/about">
-              <a
-                color="#aaa"
-                rel="author"
-                className="p-author h-card"
-                href="/about"
-              >
+            <Link href='/about'>
+              <a color='#aaa' rel='author' className='p-author h-card' href='/about'>
                 {siteMeta.author}
               </a>
             </Link>
           </div>
         </header>
-        <div className="e-content">{children}</div>
+        <div className='e-content'>{children}</div>
         <footer>
           {(previousPost || nextPost) && (
-            <div className="post-pagination">
+            <div className='post-pagination'>
               {previousPost && (
                 <NextPrevPost
                   title={previousPost.title}
                   path={previousPost.path}
-                  position="previous"
+                  position='previous'
                 />
               )}
               {nextPost && (
-                <NextPrevPost
-                  title={nextPost.title}
-                  path={nextPost.path}
-                  position="next"
-                />
+                <NextPrevPost title={nextPost.title} path={nextPost.path} position='next' />
               )}
             </div>
           )}
@@ -60,7 +51,7 @@ function TilsPost({ path, meta, children }) {
           margin-bottom: 2em;
         }
 
-        [rel="author"] {
+        [rel='author'] {
           margin-left: 1em;
         }
 
@@ -79,7 +70,7 @@ function TilsPost({ path, meta, children }) {
       `}</style>
     </>
     // </Layout>
-  );
+  )
 }
 
-export default TilsPost;
+export default TilsPost

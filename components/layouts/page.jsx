@@ -1,4 +1,4 @@
-import Layout from "./default";
+import Layout from './default'
 
 function Page({ meta, children }) {
   return (
@@ -15,7 +15,7 @@ function Page({ meta, children }) {
         }
       `}</style>
     </>
-  );
+  )
 }
 
-export default Page;
+export default Page

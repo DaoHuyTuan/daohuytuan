@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default () => (
   <style jsx global>
@@ -8,11 +8,11 @@ export default () => (
        * Based on dabblet (http://dabblet.com)
        * @author Lea Verou
        */
-      code[class*="language-"],
-      pre[class*="language-"] {
+      code[class*='language-'],
+      pre[class*='language-'] {
         color: #abb2bf;
         background: none;
-        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
         text-align: left;
         white-space: pre;
         word-spacing: normal;
@@ -28,43 +28,43 @@ export default () => (
         hyphens: none;
       }
 
-      pre[class*="language-"]::-moz-selection,
-      pre[class*="language-"] ::-moz-selection,
-      code[class*="language-"]::-moz-selection,
-      code[class*="language-"] ::-moz-selection {
+      pre[class*='language-']::-moz-selection,
+      pre[class*='language-'] ::-moz-selection,
+      code[class*='language-']::-moz-selection,
+      code[class*='language-'] ::-moz-selection {
         text-shadow: none;
         background: #383e49;
       }
 
-      pre[class*="language-"]::selection,
-      pre[class*="language-"] ::selection,
-      code[class*="language-"]::selection,
-      code[class*="language-"] ::selection {
+      pre[class*='language-']::selection,
+      pre[class*='language-'] ::selection,
+      code[class*='language-']::selection,
+      code[class*='language-'] ::selection {
         text-shadow: none;
         background: #9aa2b1;
       }
 
       @media print {
-        code[class*="language-"],
-        pre[class*="language-"] {
+        code[class*='language-'],
+        pre[class*='language-'] {
           text-shadow: none;
         }
       }
       /* Code blocks */
-      pre[class*="language-"] {
+      pre[class*='language-'] {
         padding: 1em;
         margin: 0.5em 0;
         overflow: auto;
       }
 
-      :not(pre) > code[class*="language-"],
-      pre[class*="language-"] {
+      :not(pre) > code[class*='language-'],
+      pre[class*='language-'] {
         background: #1e1e1e;
         border-radius: 20px;
       }
 
       /* Inline code */
-      :not(pre) > code[class*="language-"] {
+      :not(pre) > code[class*='language-'] {
         padding: 0.1em;
         border-radius: 0.3em;
         white-space: normal;
@@ -204,4 +204,4 @@ export default () => (
       }
     `}
   </style>
-);
+)

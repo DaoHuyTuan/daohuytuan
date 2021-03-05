@@ -1,7 +1,7 @@
-import React from "react";
-import Container from "../../components/containers/Container";
+import React from 'react'
+import Container from '../../components/containers/Container'
 const Friends = React.memo(props => {
-  return <Container>this is Friends</Container>;
-});
+  return <Container>this is Friends</Container>
+})
 
-export default Friends;
+export default Friends

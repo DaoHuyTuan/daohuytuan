@@ -1,22 +1,17 @@
-import Link from "next/link";
-import { siteMeta } from "../../blog.config";
-import Layout from "./default";
-import SyntaxHighlight from "../blogs-components/syntax-highlight";
-import PublishedAt from "../blogs-components/published-at";
-import { posts } from "../../posts/index";
-import NextPrevPost from "../blogs-components/next-prev-post";
-import {
-  BlogContent,
-  BlogContentTitle,
-  BlogEndLine,
-  PostPagination
-} from "./BlogContent.style";
-import Comments from "../blogs-components/Comments";
-import { fakeComments } from "./fake-comments";
+import Link from 'next/link'
+import { siteMeta } from '../../blog.config'
+import Layout from './default'
+import SyntaxHighlight from '../blogs-components/syntax-highlight'
+import PublishedAt from '../blogs-components/published-at'
+import { posts } from '../../posts/index'
+import NextPrevPost from '../blogs-components/next-prev-post'
+import { BlogContent, BlogContentTitle, BlogEndLine, PostPagination } from './BlogContent.style'
+import Comments from '../blogs-components/Comments'
+import { fakeComments } from './fake-comments'
 function BlogPost({ path, meta, children }) {
-  const currentPostIndex = posts.map(({ title }) => title).indexOf(meta.title);
-  const previousPost = posts[currentPostIndex + 1];
-  const nextPost = posts[currentPostIndex - 1];
+  const currentPostIndex = posts.map(({ title }) => title).indexOf(meta.title)
+  const previousPost = posts[currentPostIndex + 1]
+  const nextPost = posts[currentPostIndex - 1]
 
   return (
     <>
@@ -26,7 +21,7 @@ function BlogPost({ path, meta, children }) {
         <div>
           <PublishedAt date={meta.publishedAt} link={path} />
         </div>
-        <div className="e-content">{children}</div>
+        <div className='e-content'>{children}</div>
         <BlogEndLine />
         <Comments list={fakeComments} />
         <footer>
@@ -36,16 +31,16 @@ function BlogPost({ path, meta, children }) {
                 <NextPrevPost
                   title={previousPost.title}
                   path={previousPost.path}
-                  position="previous"
-                  icon="←"
+                  position='previous'
+                  icon='←'
                 />
               )}
               {nextPost && (
                 <NextPrevPost
                   title={nextPost.title}
                   path={nextPost.path}
-                  position="next"
-                  icon="→"
+                  position='next'
+                  icon='→'
                 />
               )}
             </PostPagination>
@@ -53,7 +48,7 @@ function BlogPost({ path, meta, children }) {
         </footer>
       </BlogContent>
     </>
-  );
+  )
 }
 
-export default BlogPost;
+export default BlogPost

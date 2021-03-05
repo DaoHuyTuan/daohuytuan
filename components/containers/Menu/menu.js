@@ -1,20 +1,20 @@
 export const menuList = [
   {
     id: 0,
-    name: "blogs",
-    url: "/",
+    name: 'blogs',
+    url: '/',
     regex: /^(\/|\/posts.*)$/
   },
   {
     id: 1,
-    name: "cv",
-    url: "/cv",
+    name: 'cv',
+    url: '/cv',
     regex: /^(\/cv)$/
   },
   {
     id: 2,
-    name: "about",
-    url: "/about",
+    name: 'about',
+    url: '/about',
     regex: /^(\/about)$/
   },
   // {
@@ -25,16 +25,16 @@ export const menuList = [
   // },
   {
     id: 3,
-    name: "app",
-    url: "https://app.daohuytuan.com"
+    name: 'app',
+    url: 'https://app.daohuytuan.com'
   }
-];
+]
 export const handleActiveClass = (path, regex) => {
-  let result;
+  let result
   if (path.match(regex) && path.match(regex).length > 0) {
-    result = "drawer-active";
+    result = 'drawer-active'
   } else {
-    result = "";
+    result = ''
   }
-  return result;
-};
+  return result
+}

@@ -1,39 +1,30 @@
-import React from "react";
-import { withRouter } from "next/router";
-import _range from "lodash/range";
-import Link from "next/link";
-import pagination from "pagination";
-import Layout from "../components/layouts/default";
-import Post from "../components/blogs-components/blog-index-item";
-import { posts, tils } from "../posts/index";
-import { siteMeta } from "../blog.config";
-import Bio from "../components/containers/Bio";
-import CardTIL from "../components/containers/CardTIL";
-import { CardTILContainer } from "../components/containers/CardTIL/CardTIL.style";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import {
-  BlogContainer,
-  BlogLabel
-} from "../components/blogs-components/blog.style";
+import React from 'react'
+import { withRouter } from 'next/router'
+import _range from 'lodash/range'
+import Link from 'next/link'
+import pagination from 'pagination'
+import Layout from '../components/layouts/default'
+import Post from '../components/blogs-components/blog-index-item'
+import { posts, tils } from '../posts/index'
+import { siteMeta } from '../blog.config'
+import Bio from '../components/containers/Bio'
+import CardTIL from '../components/containers/CardTIL'
+import { CardTILContainer } from '../components/containers/CardTIL/CardTIL.style'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
+import { BlogContainer, BlogLabel } from '../components/blogs-components/blog.style'
 const Blog = React.memo(({ router, page = 1, tills, theme }) => {
   const paginator = new pagination.SearchPaginator({
-    prelink: "/",
+    prelink: '/',
     current: page,
     rowsPerPage: siteMeta.postsPerPage,
     totalResult: posts.length
-  });
-  const {
-    previous,
-    range,
-    next,
-    fromResult,
-    toResult
-  } = paginator.getPaginationData();
-  const results = _range(fromResult - 1, toResult);
+  })
+  const { previous, range, next, fromResult, toResult } = paginator.getPaginationData()
+  const results = _range(fromResult - 1, toResult)
   return (
     <>
-      <Bio theme={theme}/>
+      <Bio theme={theme} />
       {/* <CardTILContainer>
         {
           <Carousel
@@ -119,15 +110,15 @@ const Blog = React.memo(({ router, page = 1, tills, theme }) => {
         }
       `}</style>
     </>
-  );
-});
+  )
+})
 
 Blog.getInitialProps = async ({ query }) => {
-  let tills = [];
+  let tills = []
   if (tils) {
-    tills = tils;
+    tills = tils
   }
-  return query ? { page: query.page, tills } : { tills };
-};
+  return query ? { page: query.page, tills } : { tills }
+}
 
-export default withRouter(Blog);
+export default withRouter(Blog)

@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { SIZE } from "../../../theme/variable";
+import styled from 'styled-components'
+import { SIZE } from '../../../theme/variable'
 const LogoWrapper = styled.span`
   font-size: 1.5rem;
   font-weight: 800;
   cursor: pointer;
-  color: ${props => (props.theme.stateTheme.light ? "" : "#ffffff")};
+  color: ${props => (props.theme.stateTheme.light ? '' : '#ffffff')};
   font-family: Montserrat, sans-serif;
   @media only screen and (min-width: ${SIZE.SM}px) {
     font-weight: 800;
@@ -14,5 +14,5 @@ const LogoWrapper = styled.span`
     font-weight: 900;
     font-size: 2.2rem;
   }
-`;
-export { LogoWrapper };
+`
+export { LogoWrapper }

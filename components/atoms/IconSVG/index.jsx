@@ -1,6 +1,6 @@
-import { IconSVGWrapper } from "./IconSVG.style";
+import { IconSVGWrapper } from './IconSVG.style'
 function IconSVG({ content, name, handleChange }) {
-  return <IconSVGWrapper src={content} alt={name} onClick={handleChange} />;
+  return <IconSVGWrapper src={content} alt={name} onClick={handleChange} />
 }
 
-export default IconSVG;
+export default IconSVG

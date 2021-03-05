@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const posts = require('./get-blog-posts')
 const { siteMeta } = require('../blog.config')
-const { Feed } = require("feed");
+const { Feed } = require('feed')
 // https://jsonfeed.org/version/1
 const feed = new Feed({
   version: 'https://jsonfeed.org/version/1',
@@ -15,22 +15,21 @@ const feed = new Feed({
   author: {
     name: siteMeta.author,
     url: siteMeta.siteUrl,
-    avatar: `${siteMeta.siteUrl}/static/logo.jpg`,
-  },
-});
-  posts.map(post => {
-    feed.addItem({
-      id: `${siteMeta.siteUrl}${post.path}`,
-      url: `${siteMeta.siteUrl}${post.path}`,
-      title: post.title,
-      content_text: `${post.summary} - ${siteMeta.siteUrl}${post.path}`,
-      summary: post.summary,
-      image: `${siteMeta.siteUrl}${post.image}`,
-      date_published: post.publishedAt,
-      author: siteMeta.author,
-    })
-  }),
-  
-fs.writeFileSync('./public/static/feed.xml', feed.rss2())
+    avatar: `${siteMeta.siteUrl}/static/logo.jpg`
+  }
+})
+posts.map(post => {
+  feed.addItem({
+    id: `${siteMeta.siteUrl}${post.path}`,
+    url: `${siteMeta.siteUrl}${post.path}`,
+    title: post.title,
+    content_text: `${post.summary} - ${siteMeta.siteUrl}${post.path}`,
+    summary: post.summary,
+    image: `${siteMeta.siteUrl}${post.image}`,
+    date_published: post.publishedAt,
+    author: siteMeta.author
+  })
+}),
+  fs.writeFileSync('./public/static/feed.xml', feed.rss2())
 // fs.writeFileSync('./public/static/atom.xml', feed.atom1())
 // fs.writeFileSync('./public/static/feed.json', feed.json1())
