@@ -13,7 +13,7 @@ const withCSS = require('@zeit/next-css')
 module.exports = withCSS({
   webpack: config => {
     config.module.rules.push({
-      test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+      test: /\.(jpeg|png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
       use: {
         loader: 'url-loader',
         options: {
@@ -64,7 +64,7 @@ module.exports = withMDX({
         ]
       },
       {
-        test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif|jpeg)$/,
         use: {
           loader: 'url-loader',
           options: {

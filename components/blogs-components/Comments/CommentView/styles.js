@@ -11,18 +11,19 @@ const CommentViewWrapper = styled.div`
   flex-flow: column;
   width: 100%;
   font-family: Montserrat, sans-serif;
-  border: 1px solid #ddd;
+  // border: 1px solid #ddd;
   padding: 10px;
-  border-radius: 5px;
-  background-color: #f7f7f7;
+  // border-radius: 5px;
+  // background-color: #f7f7f7;
 `
 const CommentName = styled.span`
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
 `
 
 const CommentContent = styled.span`
   font-size: 1rem;
+  text-align: justify;
 `
 
 const CommentTime = styled.span``
@@ -44,6 +45,22 @@ const AvatarBorder = styled.div`
   margin-right: 15px;
 `
 
+const CommentViewInfo = styled.div`
+  display: flex;
+  margin-bottom: 0.8rem;
+`
+
+const CommentDate = styled.span`
+  font-size: 0.8rem;
+  font-weight: normal;
+`
+
+const CommentInfo = styled.div`
+  display: flex;
+  flex-flow: column;
+  padding-top: 5px;
+  justify-content: space-between;
+`
 export {
   CommentContainer,
   CommentViewWrapper,
@@ -51,5 +68,8 @@ export {
   CommentContent,
   CommentTime,
   CommentAvatar,
-  AvatarBorder
+  CommentViewInfo,
+  AvatarBorder,
+  CommentDate,
+  CommentInfo
 }

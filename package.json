@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-blog-starter",
+  "name": "dao-huy-tuan-blog",
   "scripts": {
     "dev": "node server",
     "build": "next build",
